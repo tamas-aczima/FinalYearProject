@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalYearProject", "FinalYearProject.csproj", "{682EDA5E-9F9C-333C-D461-224557D0595B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalYearProject.Editor", "FinalYearProject.Editor.csproj", "{4CAB5959-E43A-A2A6-2650-C73E95CAA164}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{682EDA5E-9F9C-333C-D461-224557D0595B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{682EDA5E-9F9C-333C-D461-224557D0595B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{682EDA5E-9F9C-333C-D461-224557D0595B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{682EDA5E-9F9C-333C-D461-224557D0595B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CAB5959-E43A-A2A6-2650-C73E95CAA164}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CAB5959-E43A-A2A6-2650-C73E95CAA164}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CAB5959-E43A-A2A6-2650-C73E95CAA164}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CAB5959-E43A-A2A6-2650-C73E95CAA164}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

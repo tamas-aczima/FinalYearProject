@@ -1,0 +1,23 @@
+<yost>
+    <sensors SUIT_LAYOUT="Prio_Pro">
+        <hips        SERIAL="15" BONE="Hips" />
+        <chest       SERIAL="0" BONE="Spine" />
+        <head        SERIAL="1" BONE="Head" />
+        <l_upper_leg SERIAL="1C" BONE="LeftUpperLeg" />
+        <l_lower_leg SERIAL="1D" BONE="LeftLowerLeg" />
+        <l_foot      SERIAL="1E" BONE="LeftFoot" />
+        <l_shoulder  SERIAL="7" BONE="LeftShoulder" />
+        <l_upper_arm SERIAL="8" BONE="LeftUpperArm" />
+        <l_lower_arm SERIAL="9" BONE="LeftLowerArm" />
+        <l_hand      SERIAL="A" BONE="LeftHand" />
+        <l_joystick  SERIAL="B" BONE="LeftJoystick" />
+        <r_shoulder  SERIAL="E" BONE="RightShoulder" />
+        <r_upper_arm SERIAL="F" BONE="RightUpperArm" />
+        <r_lower_arm SERIAL="10" BONE="RightLowerArm" />
+        <r_hand      SERIAL="11" BONE="RightHand" />
+        <r_joystick  SERIAL="12" BONE="RightJoystick" />
+        <r_upper_leg SERIAL="23" BONE="RightUpperLeg" />
+        <r_lower_leg SERIAL="24" BONE="RightLowerLeg" />
+        <r_foot      SERIAL="25" BONE="RightFoot" />
+    </sensors>
+</yost>
