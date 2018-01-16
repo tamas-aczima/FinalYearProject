@@ -93,6 +93,9 @@
     <Compile Include="Assets\Scripts\Interactable.cs" />
     <Compile Include="Assets\Scripts\InteractWithObjects.cs" />
     <Compile Include="Assets\Scripts\LevelController.cs" />
+    <Compile Include="Assets\Scripts\Pedestal.cs" />
+    <Compile Include="Assets\Scripts\Pillar.cs" />
+    <Compile Include="Assets\Scripts\PillarPuzzleController.cs" />
     <Compile Include="Assets\Scripts\PrioController.cs" />
     <Compile Include="Assets\Scripts\Spells\Fireball.cs" />
     <Compile Include="Assets\Scripts\Spells\FireSpell.cs" />

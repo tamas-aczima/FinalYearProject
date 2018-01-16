@@ -61,14 +61,14 @@ public class PrioController : MonoBehaviour
         anim.SetFloat("forward", forward);
         anim.SetFloat("strafe", strafe);
 
-        if (forward != 0 || strafe != 0)
-        {
-            anim.SetBool("moving", true);
-        }
-        else
-        {
-            anim.SetBool("moving", false);
-        }
+        //if (forward != 0 || strafe != 0)
+        //{
+        //    anim.SetBool("moving", true);
+        //}
+        //else
+        //{
+        //    anim.SetBool("moving", false);
+        //}
 
         moveDirection = new Vector3(strafe, 0, forward);
         moveDirection = transform.TransformDirection(moveDirection);
