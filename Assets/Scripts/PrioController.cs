@@ -58,8 +58,8 @@ public class PrioController : MonoBehaviour
         //move
         forward = Input.GetAxis("Vertical");
         strafe = Input.GetAxis("Horizontal");
-        anim.SetFloat("forward", forward);
-        anim.SetFloat("strafe", strafe);
+        //anim.SetFloat("forward", forward);
+        //anim.SetFloat("strafe", strafe);
 
         //if (forward != 0 || strafe != 0)
         //{

@@ -54,14 +54,14 @@ public class FireSpell : MonoBehaviour {
             if (currentHandPosition.z < lastHandPosition.z)
             {
                 velocity = Vector3.zero;
-                Debug.Log("back");
+                //Debug.Log("back");
             }
             else if (currentHandPosition.z > lastHandPosition.z)
             {
-                Debug.Log("forward");
+                //Debug.Log("forward");
                 Vector3 direction = currentHandPosition - lastHandPosition;
                 velocity += direction;
-                Debug.Log(velocity);
+                //Debug.Log(velocity);
             }
             lastHandPosition = currentHandPosition;
         }

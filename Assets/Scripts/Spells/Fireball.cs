@@ -6,9 +6,10 @@ public class Fireball : MonoBehaviour {
 
     private Rigidbody rb;
     private ParticleSystem[] particleSystems;
+    [SerializeField] private float maxLifeTime;
+    private float lifeTimer = 0.0f;
 
-	// Use this for initialization
-	void Start () {
+	private void Start () {
         rb = GetComponent<Rigidbody>();
         particleSystems = GetComponentsInChildren<ParticleSystem>();
         foreach (ParticleSystem ps in particleSystems)
@@ -16,9 +17,22 @@ public class Fireball : MonoBehaviour {
             ps.Play();
         }
 	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+
+    private void Update()
+    {
+        lifeTimer += Time.deltaTime;
+        if (lifeTimer >= maxLifeTime)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void FixedUpdate () {
         rb.MovePosition(transform.position + rb.velocity * Time.deltaTime);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
     }
 }

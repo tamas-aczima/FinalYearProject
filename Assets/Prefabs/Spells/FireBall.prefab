@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4596620104555486}
   - component: {fileID: 198318805948792800}
   - component: {fileID: 199848828808966766}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: FireballTail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,8 @@ GameObject:
   - component: {fileID: 4800968437718314}
   - component: {fileID: 114037312491884912}
   - component: {fileID: 54252354647460620}
-  m_Layer: 0
+  - component: {fileID: 135345285788049682}
+  m_Layer: 10
   m_Name: FireBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +56,7 @@ GameObject:
   - component: {fileID: 4923996059261278}
   - component: {fileID: 198134994250560288}
   - component: {fileID: 199078239710757054}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: FireballProjectiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,6 +130,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70abb594242d4bf4a9f7c9745f77e105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxLifeTime: 10
+--- !u!135 &135345285788049682
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1317143686984264}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198134994250560288
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -188,7 +202,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1998654451
+  randomSeed: -1343824066
   InitialModule:
     serializedVersion: 3
     enabled: 1
