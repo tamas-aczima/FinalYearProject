@@ -9,7 +9,7 @@ public class PillarPuzzleController : MonoBehaviour {
     [SerializeField] private GameObject pedestalPrefab;
     [SerializeField] private Transform[] pillarLocations;
     [SerializeField] private Transform[] pedestalLocations;
-    [SerializeField] private BoxCollider leverCollider;
+    [SerializeField] private GameObject lever;
     private List<GameObject> pedestals = new List<GameObject>();
     private List<int> assignedPillarLocations = new List<int>();
     private List<int> assignedPedestalLocations = new List<int>();
@@ -77,7 +77,7 @@ public class PillarPuzzleController : MonoBehaviour {
             }
         }
 
-        leverCollider.gameObject.SetActive(false);
+        lever.SetActive(true);
         Debug.Log("Puzzle complete");
     }
 }

@@ -13,6 +13,7 @@ public class PrioController : MonoBehaviour
     private Animator anim = null;
     private float strafe = 0f;
     private float forward = 0f;
+    private float gravity = 0.0f;
     private Vector3 moveDirection = Vector3.zero;
 	//PrioRig Component
     YostSkeletonRig myPrioRig = null;
@@ -70,7 +71,14 @@ public class PrioController : MonoBehaviour
         //    anim.SetBool("moving", false);
         //}
 
-        moveDirection = new Vector3(strafe, 0, forward);
+        if (characterController.isGrounded)
+        {
+            gravity = 0.0f;
+        }
+        gravity -= Mathf.Sqrt(Time.deltaTime);
+        Debug.Log(gravity);
+
+        moveDirection = new Vector3(strafe, gravity, forward);
         moveDirection = transform.TransformDirection(moveDirection);
         characterController.Move(moveDirection * movementSpeed * Time.deltaTime);
 

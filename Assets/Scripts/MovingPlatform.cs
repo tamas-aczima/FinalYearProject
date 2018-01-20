@@ -10,6 +10,8 @@ public class MovingPlatform : MonoBehaviour {
     [SerializeField] Direction direction;
     [SerializeField] private float distance;
     [SerializeField] private float timeToReachEnd;
+    [SerializeField] private float delayTime;
+    private float delayTimer = 0.0f;
     private float currentTime = 0.0f;
     private bool reachedEnd;
     private bool reachedStart;
@@ -39,6 +41,9 @@ public class MovingPlatform : MonoBehaviour {
 
     private void Move()
     {
+        delayTimer += Time.deltaTime;
+        if (delayTimer < delayTime) return;
+
         currentTime += Time.deltaTime;
 
         float percent = currentTime / timeToReachEnd;
@@ -57,13 +62,31 @@ public class MovingPlatform : MonoBehaviour {
             reachedEnd = true;
             reachedStart = false;
             currentTime = 0;
+            delayTimer = 0;
         }
         else if (transform.position == startPos)
         {
             reachedEnd = false;
             reachedStart = true;
             currentTime = 0;
+            delayTimer = 0;
         }
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<PrioController>() != null)
+        {
+            other.gameObject.transform.parent = gameObject.transform;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.GetComponent<PrioController>() != null)
+        {
+            other.gameObject.transform.parent = null;
+        }
     }
 }
