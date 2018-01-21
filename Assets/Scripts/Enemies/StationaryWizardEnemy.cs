@@ -5,7 +5,7 @@ using UnityEngine;
 public class StationaryWizardEnemy : Enemy
 {
 
-    [SerializeField] private Transform[] teleportLocations;
+    private GameObject[] teleportLocations;
     [SerializeField] private Transform projectileLocation;
     [SerializeField] private GameObject spellPrefab;
     [SerializeField] private float minAttackTime;
@@ -45,6 +45,7 @@ public class StationaryWizardEnemy : Enemy
     {
         base.Start();
 
+        teleportLocations = GameObject.FindGameObjectsWithTag("EnemySpawnPoint");
         render = GetComponentInChildren<SkinnedMeshRenderer>();
         capsuleCollider = GetComponent<CapsuleCollider>();
         transform.position = GetRandomPosition();
@@ -172,7 +173,7 @@ public class StationaryWizardEnemy : Enemy
 
     private Vector3 GetRandomPosition()
     {
-        return teleportLocations[Random.Range(0, teleportLocations.Length)].position;
+        return teleportLocations[Random.Range(0, teleportLocations.Length)].transform.position;
     }
 
     private bool HasAnimationFinished(string name)

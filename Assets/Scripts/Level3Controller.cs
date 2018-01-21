@@ -8,6 +8,7 @@ public class Level3Controller : MonoBehaviour {
     [SerializeField] private GameObject lever;
     [SerializeField] private GameObject movingPlatform;
     private GameObject enemy;
+    private bool hasSpawnedEnemy;
 
 	// Use this for initialization
 	void Start () {
@@ -16,9 +17,10 @@ public class Level3Controller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (movingPlatform.GetComponent<MovingPlatform>().IsPlayerOnPlatform)
+		if (movingPlatform.GetComponent<MovingPlatform>().IsPlayerOnPlatform && !hasSpawnedEnemy)
         {
             enemy = Instantiate(enemyToSpawn);
+            hasSpawnedEnemy = true;
         }
 
         if (enemy != null && enemy.GetComponent<Enemy>().IsDead)

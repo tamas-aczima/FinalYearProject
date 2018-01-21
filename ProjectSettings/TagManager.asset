@@ -9,6 +9,7 @@ TagManager:
   - ThirdPerson
   - FirstPerson
   - Fire
+  - EnemySpawnPoint
   layers:
   - Default
   - TransparentFX
