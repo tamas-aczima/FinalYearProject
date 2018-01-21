@@ -91,9 +91,13 @@
     <Compile Include="Assets\Prio\Utility\YostSkeletonAPI.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\DeathZone.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Enemies\StationaryWizardEnemy.cs" />
     <Compile Include="Assets\Scripts\Flammable.cs" />
+    <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\Interactable.cs" />
     <Compile Include="Assets\Scripts\InteractWithObjects.cs" />
+    <Compile Include="Assets\Scripts\Level3Controller.cs" />
     <Compile Include="Assets\Scripts\LevelController.cs" />
     <Compile Include="Assets\Scripts\MovingPlatform.cs" />
     <Compile Include="Assets\Scripts\Pedestal.cs" />

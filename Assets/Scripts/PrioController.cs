@@ -76,7 +76,6 @@ public class PrioController : MonoBehaviour
             gravity = 0.0f;
         }
         gravity -= Mathf.Sqrt(Time.deltaTime);
-        Debug.Log(gravity);
 
         moveDirection = new Vector3(strafe, gravity, forward);
         moveDirection = transform.TransformDirection(moveDirection);

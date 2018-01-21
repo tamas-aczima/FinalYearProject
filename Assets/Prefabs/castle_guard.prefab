@@ -58,6 +58,8 @@ GameObject:
   - component: {fileID: 114260485358017576}
   - component: {fileID: 114947091197409124}
   - component: {fileID: 114803963166438850}
+  - component: {fileID: 114388422951251300}
+  - component: {fileID: 136016452900883336}
   m_Layer: 8
   m_Name: castle_guard
   m_TagString: Player
@@ -1270,7 +1272,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1070122929741042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.0324805, y: 0, z: 3.725933}
+  m_LocalPosition: {x: 0.42938548, y: 1.8568958e-16, z: -8.362716}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4037928783421792}
@@ -1821,6 +1823,18 @@ MonoBehaviour:
   upperVarianceBound: 0.25
   varianceMultiplyFactorSmooth: 4
   varianceDataLengthSmooth: 10
+--- !u!114 &114388422951251300
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1070122929741042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 803769c9a21883848a6fd187d6716350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!114 &114420645650880834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1972,6 +1986,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &136016452900883336
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1070122929741042}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.4
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!136 &136027700283354234
 CapsuleCollider:
   m_ObjectHideFlags: 1

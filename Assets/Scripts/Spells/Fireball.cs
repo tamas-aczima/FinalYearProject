@@ -8,6 +8,7 @@ public class Fireball : MonoBehaviour {
     private ParticleSystem[] particleSystems;
     [SerializeField] private float maxLifeTime;
     private float lifeTimer = 0.0f;
+    [SerializeField] private float damage;
 
 	private void Start () {
         rb = GetComponent<Rigidbody>();
@@ -33,6 +34,15 @@ public class Fireball : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.GetComponent<Health>() != null && gameObject.layer == LayerMask.NameToLayer("EnemyProjectile"))
+        {
+            collision.gameObject.GetComponent<Health>().TakeDamage(damage);
+        }
+
+        if (collision.gameObject.GetComponent<Enemy>() != null && gameObject.layer == LayerMask.NameToLayer("PlayerProjectile"))
+        {
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+        }
         Destroy(gameObject);
     }
 }

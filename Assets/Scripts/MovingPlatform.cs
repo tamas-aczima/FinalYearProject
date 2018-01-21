@@ -8,6 +8,7 @@ public class MovingPlatform : MonoBehaviour {
     private Vector3 endPos;
     private enum Direction { x, y, z};
     [SerializeField] Direction direction;
+    [SerializeField] private bool requiresPlayer;
     [SerializeField] private float distance;
     [SerializeField] private float timeToReachEnd;
     [SerializeField] private float delayTime;
@@ -15,9 +16,9 @@ public class MovingPlatform : MonoBehaviour {
     private float currentTime = 0.0f;
     private bool reachedEnd;
     private bool reachedStart;
+    private bool isPlayerOnPlatform;
 
-	// Use this for initialization
-	void Start () {
+	private void Start () {
         startPos = transform.position;
         reachedStart = true;
         switch (direction)
@@ -34,10 +35,17 @@ public class MovingPlatform : MonoBehaviour {
         }
 	}
 	
-	// Update is called once per frame
-	void Update () {
-        Move();
+	private void Update () {
+        if (!requiresPlayer || (requiresPlayer && isPlayerOnPlatform))
+        {
+            Move();
+        }
 	}
+
+    public bool IsPlayerOnPlatform
+    {
+        get { return isPlayerOnPlatform; }
+    }
 
     private void Move()
     {
@@ -78,6 +86,7 @@ public class MovingPlatform : MonoBehaviour {
     {
         if (other.gameObject.GetComponent<PrioController>() != null)
         {
+            isPlayerOnPlatform = true;
             other.gameObject.transform.parent = gameObject.transform;
         }
     }
@@ -86,6 +95,7 @@ public class MovingPlatform : MonoBehaviour {
     {
         if (other.gameObject.GetComponent<PrioController>() != null)
         {
+            isPlayerOnPlatform = false;
             other.gameObject.transform.parent = null;
         }
     }

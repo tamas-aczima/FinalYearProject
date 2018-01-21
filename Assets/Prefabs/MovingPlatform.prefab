@@ -119,6 +119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 2
-  distance: 20
+  distance: 40
   timeToReachEnd: 10
   delayTime: 5
