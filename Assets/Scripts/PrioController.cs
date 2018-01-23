@@ -10,6 +10,7 @@ public class PrioController : MonoBehaviour
     private CharacterController characterController = null;
     [SerializeField] private float movementSpeed = 0f;
     [SerializeField] private float rotateSpeed = 0f;
+    [SerializeField] private Transform thirdPersonCameraTarget;
     private Animator anim = null;
     private float strafe = 0f;
     private float forward = 0f;
@@ -84,7 +85,7 @@ public class PrioController : MonoBehaviour
         //rotate
         if (myPrioRig.GetJoyStickAxis(YOST_SKELETON_JOYSTICK_AXIS.YOST_SKELETON_RIGHT_X_AXIS) != 0)
         {
-            transform.Rotate(new Vector3(0, myPrioRig.GetJoyStickAxis(YOST_SKELETON_JOYSTICK_AXIS.YOST_SKELETON_RIGHT_X_AXIS), 0) * rotateSpeed * Time.deltaTime);
+            thirdPersonCameraTarget.Rotate(new Vector3(0, myPrioRig.GetJoyStickAxis(YOST_SKELETON_JOYSTICK_AXIS.YOST_SKELETON_RIGHT_X_AXIS), 0) * rotateSpeed * Time.deltaTime);
         }
     }
 

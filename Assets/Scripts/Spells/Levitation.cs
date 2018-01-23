@@ -6,12 +6,14 @@ public class Levitation : MonoBehaviour {
 
     private YostSkeletonRig myPrioRig = null;
     private bool isLeft = false;
-    private float maxDistance = 100;
+    private float maxDistance = 50;
     private GameObject levitatingObject = null;
     private bool isLevitating = false;
     private bool isLifted = false;
     Rigidbody rb = null;
     Vector3 handPositionAtPickUp;
+    GameObject levitationObject;
+    Transform levitationObjectParent;
 
     // Use this for initialization
     void Start () {
@@ -23,13 +25,22 @@ public class Levitation : MonoBehaviour {
 	void Update () {
         //for outline
         RaycastHit hit;
-        Debug.DrawRay(gameObject.transform.position, isLeft ? -transform.right * 50 : transform.right * 50);
+        Debug.DrawRay(gameObject.transform.position, isLeft ? -transform.right * maxDistance : transform.right * maxDistance);
         if (Physics.Raycast(gameObject.transform.position, isLeft ? -transform.right : transform.right, out hit, maxDistance))
         {
             if (hit.transform.gameObject.GetComponent<LevitationObject>() != null)
             {
+                levitationObject = hit.transform.gameObject;
                 Debug.Log("levitation object");
-                hit.transform.gameObject.GetComponent<LevitationObject>().IsAimed = true;
+                levitationObject.GetComponent<LevitationObject>().IsAimed = true;
+            }
+            else
+            {
+                if (levitationObject != null)
+                {
+                    levitationObject.GetComponent<LevitationObject>().IsAimed = false;
+                    levitationObject = null;
+                }
             }
         }
 
@@ -64,10 +75,10 @@ public class Levitation : MonoBehaviour {
         {
             if (levitatingObject != null)
             {
-                rb.freezeRotation = false;
+                //rb.freezeRotation = false;
                 rb.useGravity = true;
                 rb = null;
-                levitatingObject.transform.parent = null;
+                levitatingObject.transform.parent = levitationObjectParent;
                 levitatingObject = null;
                 isLifted = false;
             }
@@ -79,8 +90,9 @@ public class Levitation : MonoBehaviour {
             {
                 isLifted = true;
                 rb = levitatingObject.GetComponent<Rigidbody>();
-                rb.freezeRotation = true;
+                //rb.freezeRotation = true;
                 rb.useGravity = false;
+                levitationObjectParent = levitatingObject.transform.parent;
                 levitatingObject.transform.parent = gameObject.transform;
                 
             }

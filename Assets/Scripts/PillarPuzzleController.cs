@@ -20,7 +20,7 @@ public class PillarPuzzleController : MonoBehaviour {
 		for (int i = 0; i < pillarLocations.Length; i++)
         {
             //instantiate game object
-            GameObject pillar = Instantiate(pillarPrefab);
+            GameObject pillar = Instantiate(pillarPrefab, gameObject.transform);
             //set id for game object
             pillar.GetComponent<Pillar>().ID = i;
 

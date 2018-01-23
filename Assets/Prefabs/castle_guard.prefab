@@ -1899,6 +1899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 3
   rotateSpeed: 30
+  thirdPersonCameraTarget: {fileID: 4870692471154004}
 --- !u!114 &114994713237934338
 MonoBehaviour:
   m_ObjectHideFlags: 1

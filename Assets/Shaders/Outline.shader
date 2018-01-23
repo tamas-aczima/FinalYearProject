@@ -2,9 +2,10 @@
 
 Shader "Custom/Outline" {
 	Properties{
-		_MainTex("MainTex", 2D) = "white" {}
+		//_MainTex("MainTex", 2D) = "white" {}
+		_Color("Color", Color) = (1, 1, 1, 1)
 		_Outline("Outline", Range(0,0.1)) = 0
-		_OutlineColor("Color", Color) = (1, 1, 1, 1)
+		_OutlineColor("OutlineColor", Color) = (1, 1, 1, 1)
 	}
 	SubShader{
 		Pass{
@@ -40,8 +41,11 @@ Shader "Custom/Outline" {
 
 		ENDCG
 	}
+		Color[_Color]
+		Pass {}
 
-		CGPROGRAM
+
+		/*CGPROGRAM
 		#pragma surface surf Lambert
 
 		sampler2D _MainTex;
@@ -54,7 +58,7 @@ Shader "Custom/Outline" {
 			o.Albedo = tex2D(_MainTex, IN.uv_MainTex);
 		}
 
-		ENDCG
+		ENDCG*/
 	}
 	FallBack "Diffuse"
 }

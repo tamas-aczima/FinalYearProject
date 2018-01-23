@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour {
 
+
     // Use this for initialization
     void Start () {
         GameObject.FindGameObjectWithTag("Player").transform.position = GameObject.FindGameObjectWithTag("SpawnPoint").transform.position;

@@ -95,29 +95,29 @@ public class YostSkeletonRig : MonoBehaviour
 
     private List<HumanBodyBones> trackedBones = new List<HumanBodyBones>();
 
-    void OnGUI()
-    {
-        GUI.Label(new Rect(0, 0, Screen.width/2, 50), "Left Joy X-Axis: " + leftJoyStickLastFrame.x_axis);
-        GUI.Label(new Rect(0, 50, Screen.width/2, 50), "Left Joy Y-Axis: " + leftJoyStickLastFrame.y_axis);
-        GUI.Label(new Rect(0, 100, Screen.width/2, 50), "Left Joy X Button: " + leftJoyStickLastFrame.x_button);
-        GUI.Label(new Rect(0, 150, Screen.width/2, 50), "Left Joy A Button: " + leftJoyStickLastFrame.a_button);
-        GUI.Label(new Rect(0, 200, Screen.width/2, 50), "Left Joy B Button: " + leftJoyStickLastFrame.b_button);
-        GUI.Label(new Rect(0, 250, Screen.width/2, 50), "Left Joy Y Button: " + leftJoyStickLastFrame.y_button);
-        GUI.Label(new Rect(0, 300, Screen.width/2, 50), "Left Joy Top Button: " + leftJoyStickLastFrame.top_button);
-        GUI.Label(new Rect(0, 350, Screen.width/2, 50), "Left Joy Joystick Button: " + leftJoyStickLastFrame.joystick_button);
-        GUI.Label(new Rect(0, 400, Screen.width/2, 50), "Left Joy Trigger: " + leftJoyStickLastFrame.trigger);
-        GUI.Label(new Rect(0, 450, Screen.width / 2, 50), "Hub Button State: " + hubButtonState);
+    //void OnGUI()
+    //{
+    //    GUI.Label(new Rect(0, 0, Screen.width/2, 50), "Left Joy X-Axis: " + leftJoyStickLastFrame.x_axis);
+    //    GUI.Label(new Rect(0, 50, Screen.width/2, 50), "Left Joy Y-Axis: " + leftJoyStickLastFrame.y_axis);
+    //    GUI.Label(new Rect(0, 100, Screen.width/2, 50), "Left Joy X Button: " + leftJoyStickLastFrame.x_button);
+    //    GUI.Label(new Rect(0, 150, Screen.width/2, 50), "Left Joy A Button: " + leftJoyStickLastFrame.a_button);
+    //    GUI.Label(new Rect(0, 200, Screen.width/2, 50), "Left Joy B Button: " + leftJoyStickLastFrame.b_button);
+    //    GUI.Label(new Rect(0, 250, Screen.width/2, 50), "Left Joy Y Button: " + leftJoyStickLastFrame.y_button);
+    //    GUI.Label(new Rect(0, 300, Screen.width/2, 50), "Left Joy Top Button: " + leftJoyStickLastFrame.top_button);
+    //    GUI.Label(new Rect(0, 350, Screen.width/2, 50), "Left Joy Joystick Button: " + leftJoyStickLastFrame.joystick_button);
+    //    GUI.Label(new Rect(0, 400, Screen.width/2, 50), "Left Joy Trigger: " + leftJoyStickLastFrame.trigger);
+    //    GUI.Label(new Rect(0, 450, Screen.width / 2, 50), "Hub Button State: " + hubButtonState);
 
-        GUI.Label(new Rect(Screen.width / 2, 0, Screen.width / 2, 100), "Right Joy X-Axis: " + rightJoyStick.x_axis);
-        GUI.Label(new Rect(Screen.width / 2, 50, Screen.width / 2, 100), "Right Joy Y-Axis: " + rightJoyStick.y_axis);
-        GUI.Label(new Rect(Screen.width / 2, 100, Screen.width / 2, 100), "Right Joy X Button: " + rightJoyStick.x_button);
-        GUI.Label(new Rect(Screen.width / 2, 150, Screen.width / 2, 100), "Right Joy A Button: " + rightJoyStick.a_button);
-        GUI.Label(new Rect(Screen.width / 2, 200, Screen.width / 2, 100), "Right Joy B Button: " + rightJoyStick.b_button);
-        GUI.Label(new Rect(Screen.width / 2, 250, Screen.width / 2, 100), "Right Joy Y Button: " + rightJoyStick.y_button);
-        GUI.Label(new Rect(Screen.width / 2, 300, Screen.width / 2, 100), "Right Joy Top Button: " + rightJoyStick.top_button);
-        GUI.Label(new Rect(Screen.width / 2, 350, Screen.width / 2, 100), "Right Joy Joystick Button: " + rightJoyStick.joystick_button);
-        GUI.Label(new Rect(Screen.width / 2, 400, Screen.width / 2, 100), "Right Joy Trigger: " + rightJoyStick.trigger);
-    }
+    //    GUI.Label(new Rect(Screen.width / 2, 0, Screen.width / 2, 100), "Right Joy X-Axis: " + rightJoyStick.x_axis);
+    //    GUI.Label(new Rect(Screen.width / 2, 50, Screen.width / 2, 100), "Right Joy Y-Axis: " + rightJoyStick.y_axis);
+    //    GUI.Label(new Rect(Screen.width / 2, 100, Screen.width / 2, 100), "Right Joy X Button: " + rightJoyStick.x_button);
+    //    GUI.Label(new Rect(Screen.width / 2, 150, Screen.width / 2, 100), "Right Joy A Button: " + rightJoyStick.a_button);
+    //    GUI.Label(new Rect(Screen.width / 2, 200, Screen.width / 2, 100), "Right Joy B Button: " + rightJoyStick.b_button);
+    //    GUI.Label(new Rect(Screen.width / 2, 250, Screen.width / 2, 100), "Right Joy Y Button: " + rightJoyStick.y_button);
+    //    GUI.Label(new Rect(Screen.width / 2, 300, Screen.width / 2, 100), "Right Joy Top Button: " + rightJoyStick.top_button);
+    //    GUI.Label(new Rect(Screen.width / 2, 350, Screen.width / 2, 100), "Right Joy Joystick Button: " + rightJoyStick.joystick_button);
+    //    GUI.Label(new Rect(Screen.width / 2, 400, Screen.width / 2, 100), "Right Joy Trigger: " + rightJoyStick.trigger);
+    //}
 
     // Use this for initialization
     void Start()

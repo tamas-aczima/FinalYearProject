@@ -75,6 +75,7 @@ public class FireSpell : MonoBehaviour {
             //Vector3 velocity = myPrioRig.GetBoneVelocity("RightHand");
             velocity.Normalize();
             fireBall.GetComponent<Rigidbody>().velocity = velocity * 10;
+            fireBall.GetComponent<Rigidbody>().isKinematic = true;
             fireBall.transform.parent = null;
             fireBall = null;
             isFirstTriggerTouched = false;
