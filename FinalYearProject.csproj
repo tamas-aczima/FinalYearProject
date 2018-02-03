@@ -78,6 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\[AssetStore]LightningBolt\LightningBoltScript.cs" />
     <Compile Include="Assets\[AssetStore]PyroParticles\Demo\DemoScript.cs" />
     <Compile Include="Assets\[AssetStore]PyroParticles\Demo\DemoScriptEditor.cs" />
     <Compile Include="Assets\[AssetStore]PyroParticles\Prefab\Script\FireBaseScript.cs" />
@@ -105,14 +106,15 @@
     <Compile Include="Assets\Scripts\PillarPuzzleController.cs" />
     <Compile Include="Assets\Scripts\PrioController.cs" />
     <Compile Include="Assets\Scripts\Spells\Fireball.cs" />
-    <Compile Include="Assets\Scripts\Spells\FireSpell.cs" />
     <Compile Include="Assets\Scripts\Spells\Levitation.cs" />
     <Compile Include="Assets\Scripts\Spells\LevitationObject.cs" />
+    <Compile Include="Assets\Scripts\Spells\SpellController.cs" />
     <Compile Include="Assets\Scripts\ThirdPersonCamera.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Prio\TSSXML\XMLDeviceTest.xml" />
     <None Include="Assets\Shaders\Outline.shader" />
+    <None Include="Assets\[AssetStore]LightningBolt\Readme.txt" />
     <None Include="Assets\[AssetStore]PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
     <None Include="Assets\[AssetStore]PyroParticles\Readme.txt" />
   </ItemGroup>

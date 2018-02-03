@@ -130,6 +130,7 @@
   <ItemGroup>
     <None Include="Assets\Prio\TSSXML\XMLDeviceTest.xml" />
     <None Include="Assets\Shaders\Outline.shader" />
+    <None Include="Assets\[AssetStore]LightningBolt\Readme.txt" />
     <None Include="Assets\[AssetStore]PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
     <None Include="Assets\[AssetStore]PyroParticles\Readme.txt" />
   </ItemGroup>
