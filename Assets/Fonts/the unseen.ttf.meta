@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 47445a0b27918a949866e04d2ba1f138
+timeCreated: 1517790986
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: the unseen
+  fontNames:
+  - the unseen
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
