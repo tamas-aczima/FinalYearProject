@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 114256022478331068}
   - component: {fileID: 136126926635632878}
   m_Layer: 0
-  m_Name: EnemyWizard
+  m_Name: WizardEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2035,11 +2035,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  teleportLocations:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   projectileLocation: {fileID: 4248940974503284}
   spellPrefab: {fileID: 1317143686984264, guid: 28ba1af29efeca248a5999b88cefb6a2,
     type: 2}

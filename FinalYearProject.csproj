@@ -93,6 +93,8 @@
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\DeathZone.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Enemies\ParasiteAttack.cs" />
+    <Compile Include="Assets\Scripts\Enemies\ParasiteEnemy.cs" />
     <Compile Include="Assets\Scripts\Enemies\StationaryWizardEnemy.cs" />
     <Compile Include="Assets\Scripts\Flammable.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />

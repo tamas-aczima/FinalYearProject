@@ -176,11 +176,6 @@ public class StationaryWizardEnemy : Enemy
         return teleportLocations[Random.Range(0, teleportLocations.Length)].transform.position;
     }
 
-    private bool HasAnimationFinished(string name)
-    {
-        return animator.GetCurrentAnimatorStateInfo(0).IsName(name) && animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f && !animator.IsInTransition(0);
-    }
-
     private void RotateTowardsPlayer()
     {
         transform.LookAt(target);

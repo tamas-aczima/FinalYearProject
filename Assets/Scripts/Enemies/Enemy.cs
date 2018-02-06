@@ -37,4 +37,9 @@ public class Enemy : MonoBehaviour {
     {
         get { return isDead; }
     }
+
+    protected bool HasAnimationFinished(string name)
+    {
+        return animator.GetCurrentAnimatorStateInfo(0).IsName(name) && animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f && !animator.IsInTransition(0);
+    }
 }

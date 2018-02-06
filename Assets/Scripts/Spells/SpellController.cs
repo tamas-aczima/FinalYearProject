@@ -90,7 +90,7 @@ public class SpellController : MonoBehaviour {
             Vector3 velocity = isLeft ? -transform.right : transform.right;
             velocity *= fireBallVelocity;
             spell.GetComponent<Rigidbody>().velocity = velocity;
-            spell.GetComponent<Rigidbody>().isKinematic = true;
+            spell.GetComponent<Rigidbody>().isKinematic = false;
             spell.transform.parent = null;
             spell = null;
         }
