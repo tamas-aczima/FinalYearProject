@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ThirdPersonCamera : MonoBehaviour {
 
-    [SerializeField] private GameObject target = null;
+    [SerializeField] private GameObject target;
+    [SerializeField] private float damping;
     private Vector3 offset = Vector3.zero;
-    [SerializeField] private float damping = 0f;
 
     void Start()
     {
@@ -15,10 +15,17 @@ public class ThirdPersonCamera : MonoBehaviour {
 
     void LateUpdate()
     {
-        float currentAngle = transform.eulerAngles.y;
-        float desiredAngle = target.transform.eulerAngles.y;
-        float angle = Mathf.LerpAngle(currentAngle, desiredAngle, damping);
-        Quaternion rotation = Quaternion.Euler(0, angle, 0);
+        //x component
+        float currentAngleX = transform.eulerAngles.x;
+        float desiredAngleX = target.transform.eulerAngles.x;
+        float angleX = Mathf.LerpAngle(currentAngleX, desiredAngleX, damping);
+
+        //y component
+        float currentAngleY = transform.eulerAngles.y;
+        float desiredAngleY = target.transform.eulerAngles.y;
+        float angleY = Mathf.LerpAngle(currentAngleY, desiredAngleY, damping);
+
+        Quaternion rotation = Quaternion.Euler(angleX, angleY, 0);
         transform.position = target.transform.position - (rotation * offset);
 
         transform.LookAt(target.transform);

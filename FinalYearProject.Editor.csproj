@@ -147,9 +147,11 @@
     <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_SphericalProjection.shader" />
     <None Include="Assets\SteamVR\readme.txt" />
+    <None Include="Assets\[AssetStore]KY_effects\MagicEffectsPackFree\ReadMe.txt" />
     <None Include="Assets\[AssetStore]LightningBolt\Readme.txt" />
     <None Include="Assets\[AssetStore]PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
     <None Include="Assets\[AssetStore]PyroParticles\Readme.txt" />
+    <None Include="Assets\[AssetStore]UETools\Magic_Particle_Effects\Readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
