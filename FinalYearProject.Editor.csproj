@@ -121,6 +121,10 @@
       <Project>{682EDA5E-9F9C-333C-D461-224557D0595B}</Project>
       <Name>FinalYearProject</Name>
     </ProjectReference>
+    <ProjectReference Include="FinalYearProject.Plugins.csproj">
+      <Project>{AEE6CE6F-C3E3-3FF3-59BF-57E97A6B94F7}</Project>
+      <Name>FinalYearProject.Plugins</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\[AssetStore]PyroParticles\Prefab\Editor\PyroParticlesEditor.cs" />
@@ -149,8 +153,10 @@
     <None Include="Assets\SteamVR\readme.txt" />
     <None Include="Assets\[AssetStore]KY_effects\MagicEffectsPackFree\ReadMe.txt" />
     <None Include="Assets\[AssetStore]LightningBolt\Readme.txt" />
+    <None Include="Assets\[AssetStore]Medieval Bridge\Shaders\Double sided.shader" />
     <None Include="Assets\[AssetStore]PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
     <None Include="Assets\[AssetStore]PyroParticles\Readme.txt" />
+    <None Include="Assets\[AssetStore]StoneKeep\Readme.txt" />
     <None Include="Assets\[AssetStore]UETools\Magic_Particle_Effects\Readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
