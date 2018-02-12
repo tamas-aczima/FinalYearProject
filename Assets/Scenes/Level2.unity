@@ -3952,6 +3952,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a59a815e0e382dc419e5521f17f9f450, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1463666152 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1688009758536848, guid: a59a815e0e382dc419e5521f17f9f450,
+    type: 2}
+  m_PrefabInternal: {fileID: 1463666151}
 --- !u!1 &1501022960
 GameObject:
   m_ObjectHideFlags: 0
@@ -6011,11 +6016,7 @@ Prefab:
         type: 2}
       propertyPath: doorToOpen
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1346578238807074, guid: 8e1e5aabec802304db195a5c7daac26d, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1463666152}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e1e5aabec802304db195a5c7daac26d, type: 2}
   m_IsPrefabParent: 0

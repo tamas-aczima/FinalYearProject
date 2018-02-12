@@ -78,12 +78,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="FinalYearProject.Plugins.csproj">
-      <Project>{AEE6CE6F-C3E3-3FF3-59BF-57E97A6B94F7}</Project>
-      <Name>FinalYearProject.Plugins</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Assets\[AssetStore]KY_effects\Script\ConGUI.cs" />
     <Compile Include="Assets\[AssetStore]KY_effects\Script\Lighting.cs" />
     <Compile Include="Assets\[AssetStore]LightningBolt\LightningBoltScript.cs" />
@@ -96,6 +90,25 @@
     <Compile Include="Assets\[AssetStore]PyroParticles\Prefab\Script\FireProjectileScript.cs" />
     <Compile Include="Assets\[AssetStore]PyroParticles\Prefab\Script\MeteorSwarmScript.cs" />
     <Compile Include="Assets\[AssetStore]PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
+    <Compile Include="Assets\[AssetStore]Standard Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
+    <Compile Include="Assets\[AssetStore]Standard Assets\Environment\Water\Water\Scripts\Displace.cs" />
+    <Compile Include="Assets\[AssetStore]Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
+    <Compile Include="Assets\[AssetStore]Standard Assets\Environment\Water\Water\Scripts\MeshContainer.cs" />
+    <Compile Include="Assets\[AssetStore]Standard Assets\Environment\Water\Water\Scripts\PlanarReflection.cs" />
+    <Compile Include="Assets\[AssetStore]Standard Assets\Environment\Water\Water\Scripts\SpecularLighting.cs" />
+    <Compile Include="Assets\[AssetStore]Standard Assets\Environment\Water\Water\Scripts\Water.cs" />
+    <Compile Include="Assets\[AssetStore]Standard Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
+    <Compile Include="Assets\[AssetStore]Standard Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
+    <Compile Include="Assets\[AssetStore]Standard Assets\ParticleSystems\Scripts\AfterburnerPhysicsForce.cs" />
+    <Compile Include="Assets\[AssetStore]Standard Assets\ParticleSystems\Scripts\ExplosionFireAndDebris.cs" />
+    <Compile Include="Assets\[AssetStore]Standard Assets\ParticleSystems\Scripts\ExplosionPhysicsForce.cs" />
+    <Compile Include="Assets\[AssetStore]Standard Assets\ParticleSystems\Scripts\Explosive.cs" />
+    <Compile Include="Assets\[AssetStore]Standard Assets\ParticleSystems\Scripts\ExtinguishableParticleSystem.cs" />
+    <Compile Include="Assets\[AssetStore]Standard Assets\ParticleSystems\Scripts\FireLight.cs" />
+    <Compile Include="Assets\[AssetStore]Standard Assets\ParticleSystems\Scripts\Hose.cs" />
+    <Compile Include="Assets\[AssetStore]Standard Assets\ParticleSystems\Scripts\ParticleSystemMultiplier.cs" />
+    <Compile Include="Assets\[AssetStore]Standard Assets\ParticleSystems\Scripts\SmokeParticles.cs" />
+    <Compile Include="Assets\[AssetStore]Standard Assets\ParticleSystems\Scripts\WaterHoseParticles.cs" />
     <Compile Include="Assets\[AssetStore]UETools\Magic_Particle_Effects\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Prio\Scripts\YostSkeletonRig.cs" />
     <Compile Include="Assets\Prio\Utility\YostSkeletonAPI.cs" />
@@ -243,6 +256,15 @@
     <None Include="Assets\[AssetStore]Medieval Bridge\Shaders\Double sided.shader" />
     <None Include="Assets\[AssetStore]PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
     <None Include="Assets\[AssetStore]PyroParticles\Readme.txt" />
+    <None Include="Assets\[AssetStore]Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
+    <None Include="Assets\[AssetStore]Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
+    <None Include="Assets\[AssetStore]Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
+    <None Include="Assets\[AssetStore]Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
+    <None Include="Assets\[AssetStore]Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
+    <None Include="Assets\[AssetStore]Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
+    <None Include="Assets\[AssetStore]Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
+    <None Include="Assets\[AssetStore]Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
+    <None Include="Assets\[AssetStore]Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
     <None Include="Assets\[AssetStore]StoneKeep\Readme.txt" />
     <None Include="Assets\[AssetStore]UETools\Magic_Particle_Effects\Readme.txt" />
   </ItemGroup>

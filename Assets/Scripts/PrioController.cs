@@ -14,6 +14,8 @@ public class PrioController : MonoBehaviour
     [SerializeField] private Transform hips;
     [SerializeField] private float xRotationRange;
     [SerializeField] private float yRotationRange;
+    private float angleX;
+    private float angleY;
     private Animator anim = null;
     private float strafe = 0f;
     private float forward = 0f;
@@ -102,33 +104,25 @@ public class PrioController : MonoBehaviour
         //rotate
         if (myPrioRig.GetJoyStickAxis(YOST_SKELETON_JOYSTICK_AXIS.YOST_SKELETON_RIGHT_X_AXIS) != 0)
         {
-            float angle = thirdPersonCameraTarget.rotation.eulerAngles.y;
-            angle += myPrioRig.GetJoyStickAxis(YOST_SKELETON_JOYSTICK_AXIS.YOST_SKELETON_RIGHT_X_AXIS) * rotateSpeed * Time.deltaTime;
+            angleY = thirdPersonCameraTarget.rotation.eulerAngles.y;
+            angleY += myPrioRig.GetJoyStickAxis(YOST_SKELETON_JOYSTICK_AXIS.YOST_SKELETON_RIGHT_X_AXIS) * rotateSpeed * Time.deltaTime;
 
-            if (angle > 180)
-            {
-                angle -= 360;
-            }
+            angleY = (angleY > 180) ? angleY - 360 : angleY;
 
-            angle = Mathf.Clamp(angle, -yRotationRange, yRotationRange);
-
-            thirdPersonCameraTarget.rotation = Quaternion.Euler(new Vector3(0, angle, 0));
+            angleY = Mathf.Clamp(angleY, -yRotationRange, yRotationRange);
         }
 
         if (myPrioRig.GetJoyStickAxis(YOST_SKELETON_JOYSTICK_AXIS.YOST_SKELETON_RIGHT_Y_AXIS) != 0)
         {
-            float angle = thirdPersonCameraTarget.rotation.eulerAngles.x;
-            angle += myPrioRig.GetJoyStickAxis(YOST_SKELETON_JOYSTICK_AXIS.YOST_SKELETON_RIGHT_Y_AXIS) * rotateSpeed * Time.deltaTime;
+            angleX = thirdPersonCameraTarget.rotation.eulerAngles.x;
+            angleX += myPrioRig.GetJoyStickAxis(YOST_SKELETON_JOYSTICK_AXIS.YOST_SKELETON_RIGHT_Y_AXIS) * rotateSpeed * Time.deltaTime;
 
-            if (angle > 180)
-            {
-                angle -= 360;
-            }
+            angleX = (angleX > 180) ? angleX - 360 : angleX;
 
-            angle = Mathf.Clamp(angle, -xRotationRange, xRotationRange);
-
-            thirdPersonCameraTarget.rotation = Quaternion.Euler(new Vector3(angle, 0, 0));
+            angleX = Mathf.Clamp(angleX, -xRotationRange, xRotationRange);
         }
+
+        thirdPersonCameraTarget.rotation = Quaternion.Euler(new Vector3(angleX, angleY, 0));
     }
 
     private void OnApplicationQuit()

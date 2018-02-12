@@ -21,14 +21,19 @@ public class InteractWithObjects : MonoBehaviour
 
     void Update()
     {
-        //if holding object, move it with parent
-        if (heldObject != null)
-        {
-            heldObject.transform.position = gameObject.transform.position;
-        }
+        HoldObjects();
 
+        UpdateHeldObject();
+
+        TurnLever();
+
+        ReleaseObjects();
+    }
+
+    private void HoldObjects()
+    {
         //if top button pressed and collided with interactable object, then interact with object
-        if((myPrioRig.GetJoyStickButtonDown(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_LEFT_TOP_BUTTON) && isLeft && interactable != null) ||
+        if ((myPrioRig.GetJoyStickButtonDown(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_LEFT_TOP_BUTTON) && isLeft && interactable != null) ||
             (myPrioRig.GetJoyStickButtonDown(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_RIGHT_TOP_BUTTON) && !isLeft && interactable != null))
         {
             if (interactable.PickupAble)
@@ -45,28 +50,10 @@ public class InteractWithObjects : MonoBehaviour
                 grabbedAngle = interactable.gameObject.transform.parent.eulerAngles.x;
             }
         }
+    }
 
-        if (isGrabbed)
-        {
-            Vector3 moveDirection = gameObject.transform.position - handLocationAtGrab;
-            if (Mathf.Abs(moveDirection.z) > 0.2)
-            {
-                float moveAngle = moveDirection.z * 50;
-                Debug.Log("angle: " + interactable.gameObject.transform.parent.rotation.eulerAngles.x);
-                float angle = interactable.gameObject.transform.parent.rotation.eulerAngles.x;
-                angle = (angle > 180) ? angle - 360 : angle;
-                if (angle > -35)
-                {
-                    interactable.gameObject.transform.parent.rotation = Quaternion.Euler(new Vector3(grabbedAngle + moveAngle, 0, 0));
-                }
-                else
-                {
-                    interactable.IsTurned = true;
-                }
-            }
-
-        }
-
+    private void ReleaseObjects()
+    {
         //if holding object and button released, then drop object
         if ((heldObject != null && isLeft && myPrioRig.GetJoyStickButtonUp(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_LEFT_TOP_BUTTON)) ||
             (heldObject != null && !isLeft && myPrioRig.GetJoyStickButtonUp(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_RIGHT_TOP_BUTTON)))
@@ -74,6 +61,44 @@ public class InteractWithObjects : MonoBehaviour
             heldObject.transform.parent = null;
             heldObject.GetComponent<Rigidbody>().useGravity = true;
             heldObject = null;
+        }
+
+        if ((isGrabbed && isLeft && myPrioRig.GetJoyStickButtonUp(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_LEFT_TOP_BUTTON)) ||
+            (isGrabbed && !isLeft && myPrioRig.GetJoyStickButtonUp(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_RIGHT_TOP_BUTTON)))
+        {
+            isGrabbed = false;
+        }
+    }
+
+    private void UpdateHeldObject()
+    {
+        //if holding object, move it with parent
+        if (heldObject != null)
+        {
+            heldObject.transform.position = gameObject.transform.position;
+        }
+    }
+
+    private void TurnLever()
+    {
+        if (!isGrabbed) return;
+        Debug.Log("turning");
+
+        Vector3 moveDirection = gameObject.transform.position - handLocationAtGrab;
+        if (Mathf.Abs(moveDirection.z) > 0.05)
+        {
+            float moveAngle = moveDirection.z * 50;
+            Debug.Log("angle: " + interactable.gameObject.transform.parent.rotation.eulerAngles.x);
+            float angle = interactable.gameObject.transform.parent.rotation.eulerAngles.x;
+            angle = (angle > 180) ? angle - 360 : angle;
+            if (angle > -35)
+            {
+                interactable.gameObject.transform.parent.rotation = Quaternion.Euler(new Vector3(grabbedAngle + moveAngle, 0, 0));
+            }
+            else
+            {
+                interactable.IsTurned = true;
+            }
         }
     }
 
@@ -88,10 +113,9 @@ public class InteractWithObjects : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.GetComponent<Interactable>() != null)
+        if (collision.gameObject.GetComponent<Interactable>() != null && !isGrabbed)
         {
             interactable = null;
-            isGrabbed = false;
         }
     }
 

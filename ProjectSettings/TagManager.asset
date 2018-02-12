@@ -10,6 +10,7 @@ TagManager:
   - FirstPerson
   - Fire
   - EnemySpawnPoint
+  - Interact
   layers:
   - Default
   - TransparentFX
@@ -24,8 +25,8 @@ TagManager:
   - PlayerProjectile
   - EnemyProjectile
   - Enemy
-  - 
-  - 
+  - Hand
+  - Spell
   - 
   - 
   - 
