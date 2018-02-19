@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Levitation : MonoBehaviour {
 
     private YostSkeletonRig myPrioRig = null;
     private bool isLeft = false;
     private float maxDistance = 50;
+    private int maxHits = 3;
     private GameObject levitatingObject = null;
     private bool isLevitating = false;
     private bool isLifted = false;
@@ -14,89 +16,100 @@ public class Levitation : MonoBehaviour {
     Vector3 handPositionAtPickUp;
     GameObject levitationObject;
     Transform levitationObjectParent;
+    GameObject[] hits;
 
     // Use this for initialization
     void Start () {
         myPrioRig = gameObject.transform.root.gameObject.GetComponent<YostSkeletonRig>();
         isLeft = gameObject.name == "LeftHand";
+        hits = new GameObject[maxHits];
     }
 	
 	// Update is called once per frame
 	void Update () {
-        //for outline
-        RaycastHit hit;
-        Debug.DrawRay(gameObject.transform.position, isLeft ? -transform.right * maxDistance : transform.right * maxDistance);
-        if (Physics.Raycast(gameObject.transform.position, isLeft ? -transform.right : transform.right, out hit, maxDistance))
+
+        RayCast();
+
+        CheckNoLevitationObject();
+
+        LevitateObject();
+    }
+
+    private void RayCast()
+    {
+        //for debugging
+        //for (int i = 0; i < maxHits; i++)
+        //{
+        //    Debug.DrawRay(gameObject.transform.position + new Vector3((i - 1) / 1.5f, 0, 0), isLeft ? -transform.right * maxDistance : transform.right * maxDistance);
+        //}
+
+        for (int i = 0; i < maxHits; i++)
         {
-            if (hit.transform.gameObject.GetComponent<LevitationObject>() != null)
+            Ray ray = new Ray(gameObject.transform.position + new Vector3((i - 1) / 1.5f, 0, 0), isLeft ? -transform.right : transform.right);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, maxDistance))
             {
-                levitationObject = hit.transform.gameObject;
-                Debug.Log("levitation object");
-                levitationObject.GetComponent<LevitationObject>().IsAimed = true;
-            }
-            else
-            {
-                if (levitationObject != null)
+                if (hit.transform.gameObject != null)
                 {
-                    levitationObject.GetComponent<LevitationObject>().IsAimed = false;
-                    levitationObject = null;
+                    hits[i] = hit.transform.gameObject;
+                }
+                
+                if (hit.transform.gameObject.GetComponent<LevitationObject>() != null)
+                {
+                    levitationObject = hit.transform.gameObject;
+                    levitationObject.GetComponent<LevitationObject>().IsAimed = true;
                 }
             }
         }
+    }
 
-
-        if ((myPrioRig.GetJoyStickButtonDown(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_LEFT_JOYSTICK_BUTTON) && isLeft) ||
-            (myPrioRig.GetJoyStickButtonDown(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_RIGHT_JOYSTICK_BUTTON) && !isLeft))
+    private void CheckNoLevitationObject()
+    {
+        if (hits.All(hit => hit.gameObject.GetComponent<LevitationObject>() == null))
         {
-            if (gameObject.transform.rotation.eulerAngles.z < 220 && gameObject.transform.rotation.eulerAngles.z > 100)
+            if (levitationObject != null && !isLevitating)
             {
-                if (Physics.Raycast(transform.position, isLeft ? -transform.right : transform.right, out hit, maxDistance))
-                {
-                    if (hit.transform.gameObject.GetComponent<LevitationObject>() != null)
-                    {
-                        //Debug.Log("hit");
-                        levitatingObject = hit.transform.gameObject;
-                        isLevitating = true;
-                        handPositionAtPickUp = gameObject.transform.position;
-                        //Debug.Log(handPositionAtPickUp);
-                    }
-                }
+                levitationObject.GetComponent<LevitationObject>().IsAimed = false;
+                levitationObject = null;
             }
         }
-            
+    }
 
-        if ((myPrioRig.GetJoyStickButtonUp(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_LEFT_JOYSTICK_BUTTON) && isLeft) ||
-            (myPrioRig.GetJoyStickButtonUp(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_RIGHT_JOYSTICK_BUTTON) && !isLeft))
-        {
-            isLevitating = false;
-        }
+    private void LevitateObject()
+    {
+        if (levitationObject == null) return;
 
         if (!isLevitating)
         {
-            if (levitatingObject != null)
+            if ((myPrioRig.GetJoyStickButtonDown(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_LEFT_JOYSTICK_BUTTON) && isLeft) ||
+            (myPrioRig.GetJoyStickButtonDown(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_RIGHT_JOYSTICK_BUTTON) && !isLeft))
             {
+                if (gameObject.transform.rotation.eulerAngles.z < 200 && gameObject.transform.rotation.eulerAngles.z > 160)
+                {
+                    isLevitating = true;
+                    handPositionAtPickUp = gameObject.transform.position;
+                    rb = levitationObject.GetComponent<Rigidbody>();
+                    //rb.freezeRotation = true;
+                    rb.useGravity = false;
+                    levitationObjectParent = levitationObject.transform.parent;
+                    levitationObject.transform.parent = gameObject.transform;
+                }
+            }
+        }
+        
+        else if (isLevitating)
+        {
+            levitationObject.transform.rotation = Quaternion.identity;
+
+            if ((myPrioRig.GetJoyStickButtonUp(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_LEFT_JOYSTICK_BUTTON) && isLeft) ||
+            (myPrioRig.GetJoyStickButtonUp(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_RIGHT_JOYSTICK_BUTTON) && !isLeft))
+            {
+                isLevitating = false;
                 //rb.freezeRotation = false;
                 rb.useGravity = true;
                 rb = null;
-                levitatingObject.transform.parent = levitationObjectParent;
-                levitatingObject = null;
-                isLifted = false;
+                levitationObject.transform.parent = levitationObjectParent;
             }
-        }
-
-        if (levitatingObject != null)
-        {
-            if (!isLifted)
-            {
-                isLifted = true;
-                rb = levitatingObject.GetComponent<Rigidbody>();
-                //rb.freezeRotation = true;
-                rb.useGravity = false;
-                levitationObjectParent = levitatingObject.transform.parent;
-                levitatingObject.transform.parent = gameObject.transform;
-                
-            }
-            levitatingObject.transform.rotation = Quaternion.identity;
-        }
+        } 
     }
 }
