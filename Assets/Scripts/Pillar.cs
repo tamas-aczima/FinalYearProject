@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pillar : MonoBehaviour {
 
     private int id;
+    private Vector3 startPos;
 
 	// Use this for initialization
 	void Start () {
@@ -35,4 +36,10 @@ public class Pillar : MonoBehaviour {
         get { return id; }
         set { id = value; }
     }
+
+    public Vector3 StartPos
+    {
+        get { return startPos; }
+        set { startPos = value; }
+    } 
 }

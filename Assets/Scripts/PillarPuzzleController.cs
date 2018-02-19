@@ -11,6 +11,7 @@ public class PillarPuzzleController : MonoBehaviour {
     [SerializeField] private Transform[] pedestalLocations;
     [SerializeField] private GameObject lever;
     private List<GameObject> pedestals = new List<GameObject>();
+    private List<GameObject> pillars = new List<GameObject>();
     private List<int> assignedPillarLocations = new List<int>();
     private List<int> assignedPedestalLocations = new List<int>();
 
@@ -23,6 +24,8 @@ public class PillarPuzzleController : MonoBehaviour {
             GameObject pillar = Instantiate(pillarPrefab, gameObject.transform);
             //set id for game object
             pillar.GetComponent<Pillar>().ID = i;
+            //add to list
+            pillars.Add(pillar);
 
             //check for available location
             int arrayLoc;
@@ -35,6 +38,7 @@ public class PillarPuzzleController : MonoBehaviour {
                 {
                     assignedPillarLocations.Add(arrayLoc);
                     pillar.transform.position = pillarLocations[arrayLoc].position;
+                    pillar.GetComponent<Pillar>().StartPos = pillar.transform.position;
                     newLoc = true;
                 }
             }
@@ -79,5 +83,16 @@ public class PillarPuzzleController : MonoBehaviour {
 
         lever.SetActive(true);
         Debug.Log("Puzzle complete");
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        foreach (GameObject pillar in pillars)
+        {
+            if (pillar.gameObject == other.gameObject)
+            {
+                pillar.transform.position = pillar.GetComponent<Pillar>().StartPos;
+            }
+        }
     }
 }

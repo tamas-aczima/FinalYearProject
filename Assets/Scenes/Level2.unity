@@ -6066,7 +6066,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1070122929741042, guid: efe80ccdde29d15498612eba332fbc98, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: efe80ccdde29d15498612eba332fbc98, type: 2}
@@ -6080,6 +6080,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2092666106}
   - component: {fileID: 2092666105}
+  - component: {fileID: 2092666107}
   m_Layer: 0
   m_Name: PuzzleController
   m_TagString: Untagged
@@ -6126,3 +6127,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2092666107
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2092666104}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 50, y: 24, z: 35}
+  m_Center: {x: 0, y: 0, z: 0}
