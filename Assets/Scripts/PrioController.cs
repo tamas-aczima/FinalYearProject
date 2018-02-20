@@ -88,12 +88,13 @@ public class PrioController : MonoBehaviour
         {
             gravity = 0.0f;
         }
-        gravity -= Mathf.Sqrt(Time.deltaTime);
-
-        
+        else
+        {
+            gravity -= Mathf.Sqrt(Time.deltaTime);
+        }
 
         moveDirection = new Vector3(strafe, gravity, forward);
-        if (strafe != 0.0f || forward != 0.0f)
+        if (strafe != 0.0f || forward != 0.0f || !characterController.isGrounded)
         {
             moveDirectionRelativeToHips = Quaternion.Euler(0, hips.transform.rotation.eulerAngles.y, 0) * moveDirection;
             moveDirectionRelativeToHips = transform.TransformDirection(moveDirectionRelativeToHips);
@@ -115,7 +116,7 @@ public class PrioController : MonoBehaviour
         if (myPrioRig.GetJoyStickAxis(YOST_SKELETON_JOYSTICK_AXIS.YOST_SKELETON_RIGHT_Y_AXIS) != 0)
         {
             angleX = thirdPersonCameraTarget.rotation.eulerAngles.x;
-            angleX += myPrioRig.GetJoyStickAxis(YOST_SKELETON_JOYSTICK_AXIS.YOST_SKELETON_RIGHT_Y_AXIS) * rotateSpeed * Time.deltaTime;
+            angleX -= myPrioRig.GetJoyStickAxis(YOST_SKELETON_JOYSTICK_AXIS.YOST_SKELETON_RIGHT_Y_AXIS) * rotateSpeed * Time.deltaTime;
 
             angleX = (angleX > 180) ? angleX - 360 : angleX;
 
