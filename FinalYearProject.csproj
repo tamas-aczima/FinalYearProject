@@ -114,6 +114,7 @@
     <Compile Include="Assets\Prio\Utility\YostSkeletonAPI.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\DeathZone.cs" />
+    <Compile Include="Assets\Scripts\Enemies\DragonEnemy.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemies\ParasiteAttack.cs" />
     <Compile Include="Assets\Scripts\Enemies\ParasiteEnemy.cs" />
