@@ -11,6 +11,7 @@ TagManager:
   - Fire
   - EnemySpawnPoint
   - Interact
+  - Scroll
   layers:
   - Default
   - TransparentFX
@@ -27,8 +28,8 @@ TagManager:
   - Enemy
   - Hand
   - Spell
-  - 
-  - 
+  - BloomMobileEffect
+  - Ground
   - 
   - 
   - 

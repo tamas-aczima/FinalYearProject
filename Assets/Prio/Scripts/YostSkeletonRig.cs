@@ -186,39 +186,39 @@ public class YostSkeletonRig : MonoBehaviour
     }
 
     // LateUpdate is called at a regular interval
-    void FixedUpdate()
-    {
-        if (isStreaming)
-        {
-            Transform rootBone = anim.GetBoneTransform(HumanBodyBones.Hips);
-            float[] tmp = new float[3];
-            byte[] bone_name = new byte[32];
-            YOST_SKELETON_ERROR error = yost.getPinnedBoneDataPedestrianTrackingProcessor(pedTrackingProcId, tmp, bone_name, 32);
-            string pinned_bone_name = System.Text.Encoding.UTF8.GetString(bone_name);
+    //void FixedUpdate()
+    //{
+    //    if (isStreaming)
+    //    {
+    //        Transform rootBone = anim.GetBoneTransform(HumanBodyBones.Hips);
+    //        float[] tmp = new float[3];
+    //        byte[] bone_name = new byte[32];
+    //        YOST_SKELETON_ERROR error = yost.getPinnedBoneDataPedestrianTrackingProcessor(pedTrackingProcId, tmp, bone_name, 32);
+    //        string pinned_bone_name = System.Text.Encoding.UTF8.GetString(bone_name);
 
-            if (GameObject.Find(pinned_bone_name) == null)
-            {
-                return;
-            }
+    //        if (GameObject.Find(pinned_bone_name) == null)
+    //        {
+    //            return;
+    //        }
 
-            CharacterController controller = GetComponent<CharacterController>();
-            moveDirection = Vector3.zero;
+    //        CharacterController controller = GetComponent<CharacterController>();
+    //        moveDirection = Vector3.zero;
 
-            tmp[0] = 0;
-            tmp[1] = 0;
-            tmp[2] = 0;
-            error = yost.getSkeletonTranslation(pedTrackingProcId, tmp);
-            moveDirection = new Vector3(tmp[0], tmp[1], tmp[2]);
+    //        tmp[0] = 0;
+    //        tmp[1] = 0;
+    //        tmp[2] = 0;
+    //        error = yost.getSkeletonTranslation(pedTrackingProcId, tmp);
+    //        moveDirection = new Vector3(tmp[0], tmp[1], tmp[2]);
 
-            controller.Move(moveDirection);
+    //        controller.Move(moveDirection);
 
-            LayerMask groundMask = LayerMask.GetMask("Ground");
-            RaycastHit ray;
-            Physics.Raycast(rootBone.position + Vector3.up, -Vector3.up, out ray, 10, groundMask);
+    //        LayerMask groundMask = LayerMask.GetMask("Ground");
+    //        RaycastHit ray;
+    //        Physics.Raycast(rootBone.position + Vector3.up, -Vector3.up, out ray, 10, groundMask);
 
-            rootBone.position = new Vector3(rootBone.position.x, rootBone.position.y - GameObject.Find(pinned_bone_name).transform.position.y + ray.point.y + .08f, rootBone.position.z);
-        }
-    }
+    //        rootBone.position = new Vector3(rootBone.position.x, rootBone.position.y - GameObject.Find(pinned_bone_name).transform.position.y + ray.point.y + .08f, rootBone.position.z);
+    //    }
+    //}
 
     // LateUpdate is called once per frame after the animation cycle
     void LateUpdate()

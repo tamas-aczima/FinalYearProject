@@ -97,6 +97,9 @@ namespace DigitalRuby.LightningBolt
         private int animationPingPongDirection = 1;
         private bool orthographic;
 
+        private CapsuleCollider coll;
+        private bool hasSetupCollider = false;
+
         private void GetPerpendicularVector(ref Vector3 directionNormalized, out Vector3 side)
         {
             if (directionNormalized == Vector3.zero)
@@ -294,6 +297,8 @@ namespace DigitalRuby.LightningBolt
 
         private void Update()
         {
+            SetupCollider();
+
             orthographic = (Camera.main != null && Camera.main.orthographic);
             if (timer <= 0.0f)
             {
@@ -308,6 +313,18 @@ namespace DigitalRuby.LightningBolt
                 }
             }
             timer -= Time.deltaTime;
+        }
+
+        private void SetupCollider()
+        {
+            if (!hasSetupCollider)
+            {
+                coll = GetComponent<CapsuleCollider>();
+                float length = (EndPosition - StartPosition).magnitude;
+                coll.center = new Vector3(-length / 2, 0, 0);
+                coll.height = length;
+                hasSetupCollider = true;
+            }
         }
 
         /// <summary>

@@ -15,7 +15,7 @@
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
     <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
-    <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
+    <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.1.0f3</UnityVersion>
     <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
@@ -27,7 +27,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_0;UNITY_2017_1;UNITY_2017;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_0;UNITY_2017_1;UNITY_2017;PLATFORM_ARCH_64;UNITY_64;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -37,7 +37,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_0;UNITY_2017_1;UNITY_2017;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE</DefineConstants>
+    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_0;UNITY_2017_1;UNITY_2017;PLATFORM_ARCH_64;UNITY_64;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
@@ -81,15 +81,6 @@
     <Compile Include="Assets\[AssetStore]KY_effects\Script\ConGUI.cs" />
     <Compile Include="Assets\[AssetStore]KY_effects\Script\Lighting.cs" />
     <Compile Include="Assets\[AssetStore]LightningBolt\LightningBoltScript.cs" />
-    <Compile Include="Assets\[AssetStore]PyroParticles\Demo\DemoScript.cs" />
-    <Compile Include="Assets\[AssetStore]PyroParticles\Demo\DemoScriptEditor.cs" />
-    <Compile Include="Assets\[AssetStore]PyroParticles\Prefab\Script\FireBaseScript.cs" />
-    <Compile Include="Assets\[AssetStore]PyroParticles\Prefab\Script\FireCollisionForwardScript.cs" />
-    <Compile Include="Assets\[AssetStore]PyroParticles\Prefab\Script\FireConstantBaseScript.cs" />
-    <Compile Include="Assets\[AssetStore]PyroParticles\Prefab\Script\FireLightScript.cs" />
-    <Compile Include="Assets\[AssetStore]PyroParticles\Prefab\Script\FireProjectileScript.cs" />
-    <Compile Include="Assets\[AssetStore]PyroParticles\Prefab\Script\MeteorSwarmScript.cs" />
-    <Compile Include="Assets\[AssetStore]PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
     <Compile Include="Assets\[AssetStore]Standard Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
     <Compile Include="Assets\[AssetStore]Standard Assets\Environment\Water\Water\Scripts\Displace.cs" />
     <Compile Include="Assets\[AssetStore]Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
@@ -110,11 +101,113 @@
     <Compile Include="Assets\[AssetStore]Standard Assets\ParticleSystems\Scripts\SmokeParticles.cs" />
     <Compile Include="Assets\[AssetStore]Standard Assets\ParticleSystems\Scripts\WaterHoseParticles.cs" />
     <Compile Include="Assets\[AssetStore]UETools\Magic_Particle_Effects\Scripts\CameraMovement.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\DemoResources\Scripts\RFX1_DemoGUI.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\DemoResources\Scripts\RFX1_FPS.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\DemoResources\Scripts\RFX1_MouseOrbit.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\DemoResources\Scripts\RFX1_RealtimeReflection.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\PostEffects\Mobile\RFX1_DistortionAndBloom.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\PostEffects\PC\Bloom\RFX1_Bloom.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\PostEffects\PC\Common\RFX1_ImageEffectHelper.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\PostEffects\PC\Common\RFX1_MinAttribute.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\PostEffects\PC\Common\RFX1_RenderTextureUtility.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\Curves\RFX1_AudioPitchCurves.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\Curves\RFX1_AudioVolumeCurves.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\Curves\RFX1_LightCurves.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\Curves\RFX1_ProjectorSizeCurves.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\Curves\RFX1_ScaleCurves.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\Curves\RFX1_ShaderColorGradient.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\Curves\RFX1_ShaderFloatCurve.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\Curves\RFX1_ShaderProperties.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\Curves\RFX1_WindCurves.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\EffectSettings\RFX1_EffectSettingColor.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\EffectSettings\RFX1_EffectSettingProjectile.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\EffectSettings\RFX1_ShieldInteraction.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\EffectSettings\RFX1_Target.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\RFX1_ActivateGravityAfterCollision.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\RFX1_AnimatorEvents.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\RFX1_ColorHelper.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\RFX1_DeactivateByTime.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\RFX1_ParticleCollisionDecal.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\RFX1_ParticleCollisionGameObject.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\RFX1_ParticleGravityPoint.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\RFX1_ParticleInfinite.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\RFX1_ParticlePositionPoint.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\RFX1_RandomRotate.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\RFX1_RotationFreeze.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\RFX1_ShieldCollisionTrigger.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\RFX1_SimpleDecal.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\RFX1_StartDelay.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\RFX1_TextureShaderProperties.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\RFX1_TransformMotion.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\RFX1_UVAnimation.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v1\Scripts\RFX4_LocalSpaceFix.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\PostEffects\Mobile\RFX4_DistortionAndBloom.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\PostEffects\PC\Bloom\Bloom_RFX4.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\PostEffects\PC\Common\ImageEffectHelper_FPS.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\PostEffects\PC\Common\MinAttribute_FPS.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\PostEffects\PC\Common\RenderTextureUtility_FPS.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scene\RFX4_DemoGUI.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scene\RFX4_FPS.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scene\RFX4_MouseOrbit.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scene\RFX4_RealtimeReflection.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\Curves\RFX4_AudioCurves.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\Curves\RFX4_LightCurves.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\Curves\RFX4_PhysicsForceCurves.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\Curves\RFX4_ScaleCurves.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\Curves\RFX4_ShaderColorGradient.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\Curves\RFX4_ShaderFloatCurve.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\Curves\RFX4_ShaderProperties.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\Curves\RFX4_WindCurves.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\EffectSettings\RFX4_EffectSettingColor.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\EffectSettings\RFX4_EffectSettingPhysxForce.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\EffectSettings\RFX4_EffectSettingProjectile.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\EffectSettings\RFX4_EffectSettingsTimeScale.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\EffectSettings\RFX4_EffectSettingVisible.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\ParticleSysem\RFX4_CollisionPropertyDeactiavtion.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\ParticleSysem\RFX4_ParticleCollisionHandler.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\ParticleSysem\RFX4_ParticleLight.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\ParticleSysem\RFX4_ParticleTrail.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\ParticleSysem\RFX4_Turbulence.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_CameraShake.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_ColorHelper.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_CopyPosition.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_DeactivateByTime.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_DeactivateRigidbodyByTime.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_DemoReactivation.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_EffectEvent.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_MaterialQueue.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_OnEnableResetTransform.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_PhysXSetImpulse.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_RaycastCollision.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_ReplaceMaterialByTime.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_ReplaceModelOnCollision.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_RotateAround.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_SimpleDecal.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_StartDelay.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_TextureShaderProperties.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_TornadoParticles.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_TrailRenderer.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_TransformMotion.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_UVAnimation.cs" />
+    <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_UVScroll.cs" />
     <Compile Include="Assets\Prio\Scripts\YostSkeletonRig.cs" />
     <Compile Include="Assets\Prio\Utility\YostSkeletonAPI.cs" />
-    <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\PyroParticles\Demo\DemoScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\FireBaseScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\FireCollisionForwardScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\FireConstantBaseScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\FireLightScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\FireProjectileScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\MeteorSwarmScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Camera\FirstPersonCamera.cs" />
+    <Compile Include="Assets\Scripts\Camera\ThirdPersonCamera.cs" />
     <Compile Include="Assets\Scripts\DeathZone.cs" />
+    <Compile Include="Assets\Scripts\DisplayText.cs" />
+    <Compile Include="Assets\Scripts\Enemies\DamagePlayer.cs" />
     <Compile Include="Assets\Scripts\Enemies\DragonEnemy.cs" />
+    <Compile Include="Assets\Scripts\Enemies\DragonMeleeAttack.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemies\ParasiteAttack.cs" />
     <Compile Include="Assets\Scripts\Enemies\ParasiteEnemy.cs" />
@@ -134,7 +227,7 @@
     <Compile Include="Assets\Scripts\Spells\Levitation.cs" />
     <Compile Include="Assets\Scripts\Spells\LevitationObject.cs" />
     <Compile Include="Assets\Scripts\Spells\SpellController.cs" />
-    <Compile Include="Assets\Scripts\ThirdPersonCamera.cs" />
+    <Compile Include="Assets\Scripts\Spells\ToggleSpellColliders.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_Teleporter.cs" />
@@ -239,7 +332,28 @@
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_Utils.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\KriptoFX\Realistic Effects Pack v1\PostEffects\PC\Bloom\Resources\RFX1_Bloom.shader" />
+    <None Include="Assets\KriptoFX\Realistic Effects Pack v1\Shaders\Decal\RFX1_DecalDistortMask.shader" />
+    <None Include="Assets\KriptoFX\Realistic Effects Pack v1\Shaders\Decal\RFX1_DecalDistortMaskMobile.shader" />
+    <None Include="Assets\KriptoFX\Realistic Effects Pack v1\Shaders\Decal\RFX1_DecalDistortMaskMul.shader" />
+    <None Include="Assets\KriptoFX\Realistic Effects Pack v1\Shaders\Decal\RFX1_DecalMaskCutOut.shader" />
+    <None Include="Assets\KriptoFX\Realistic Effects Pack v1\Shaders\Decal\RFX1_DecalWorldMask.shader" />
+    <None Include="Assets\KriptoFX\Realistic Effects Pack v1\Shaders\DistortPasses.cginc" />
+    <None Include="Assets\KriptoFX\Realistic Effects Pack v1\Shaders\RFX1_BlendCutout.shader" />
+    <None Include="Assets\KriptoFX\Realistic Effects Pack v1\Shaders\RFX1_CutoutBorder.shader" />
+    <None Include="Assets\KriptoFX\Realistic Effects Pack v1\Shaders\RFX1_Fringe.shader" />
+    <None Include="Assets\KriptoFX\Realistic Effects Pack v1\Shaders\RFX1_Particle.shader" />
+    <None Include="Assets\KriptoFX\Realistic Effects Pack v1\Shaders\UberDistortStandard.shader" />
+    <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\Decal\RFX4_DecalDistortMask.shader" />
+    <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\Decal\RFX4_IceDecal.shader" />
+    <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\RFX4_DistortionParticles.shader" />
+    <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\RFX4_DistortionParticlesAdd.shader" />
+    <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\RFX4_Ice.shader" />
+    <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\RFX4_Particle.shader" />
+    <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\RFX4_ShaderExtension.cginc" />
     <None Include="Assets\Prio\TSSXML\XMLDeviceTest.xml" />
+    <None Include="Assets\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
+    <None Include="Assets\PyroParticles\Readme.txt" />
     <None Include="Assets\Shaders\Outline.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\SeeThru.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\Silhouette.shader" />
@@ -255,8 +369,6 @@
     <None Include="Assets\[AssetStore]KY_effects\MagicEffectsPackFree\ReadMe.txt" />
     <None Include="Assets\[AssetStore]LightningBolt\Readme.txt" />
     <None Include="Assets\[AssetStore]Medieval Bridge\Shaders\Double sided.shader" />
-    <None Include="Assets\[AssetStore]PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
-    <None Include="Assets\[AssetStore]PyroParticles\Readme.txt" />
     <None Include="Assets\[AssetStore]Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
     <None Include="Assets\[AssetStore]Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
     <None Include="Assets\[AssetStore]Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />

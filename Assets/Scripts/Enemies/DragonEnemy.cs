@@ -14,6 +14,17 @@ public class DragonEnemy : Enemy {
     [SerializeField] private MeshCollider ground;
     [SerializeField] private float landingProbability;
     [SerializeField] private float flyingProbability;
+    [SerializeField] private Transform mouthTransform;
+    [SerializeField] private Transform fireTarget;
+    [SerializeField] private GameObject firePrefab;
+    private GameObject fire;
+    [SerializeField] private float fireDelay;
+    private float fireDelayTimer = 0.0f;
+    private int attackNumber;
+    private bool attackChosen = false;
+    [SerializeField] private float attack1Distance;
+    [SerializeField] private float attack2Distance;
+    [SerializeField] private float attack3Distance;
 
     private Quaternion rotation = Quaternion.identity;
     private int lastRandom = 0;
@@ -53,7 +64,15 @@ public class DragonEnemy : Enemy {
             case States.Idle:
                 if (HasAnimationFinished("Idle"))
                 {
-                    currentState = States.FlyUp;
+                    rand = Random.Range(0f, 1f);
+                    if (rand < flyingProbability)
+                    {
+                        currentState = States.FlyUp;
+                    }
+                    else
+                    {
+                        currentState = States.Walk;
+                    }
                 }
                 break;
             case States.FlyUp:
@@ -68,6 +87,7 @@ public class DragonEnemy : Enemy {
                 break;
             case States.Fly:
                 animator.SetBool("ShouldBreatheFire", false);
+                fire = null;
 
                 if (target == Vector3.zero)
                 {
@@ -101,6 +121,7 @@ public class DragonEnemy : Enemy {
                 else
                 {
                     animator.SetBool("ShouldBreatheFire", true);
+                    ShootFire();
                 }
                 if (HasAnimationFinished("FlyBreatheFire"))
                 {
@@ -119,6 +140,7 @@ public class DragonEnemy : Enemy {
             case States.Land:
                 animator.SetBool("ShouldLand", true);
                 animator.SetBool("ShouldBreatheFire", false);
+                fire = null;
 
                 if (target == Vector3.zero)
                 {
@@ -139,8 +161,19 @@ public class DragonEnemy : Enemy {
                 animator.SetBool("IsAttacking", false);
                 animator.SetBool("IsFlying", false);
                 animator.SetBool("ShouldLand", false);
+                fire = null;
 
                 target = GameObject.FindGameObjectWithTag("Player").transform.position;
+
+                if (!attackChosen)
+                {
+                    attackNumber = Random.Range(0, 3);
+                    if (GetAttackDistance() <= Vector3.Distance(target, transform.position))
+                    {
+                        attackChosen = true;
+                    }
+                }
+                
                 GetRotationToTarget();
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotateSpeed);
 
@@ -148,8 +181,24 @@ public class DragonEnemy : Enemy {
                 break;
             case States.Attack:
                 animator.SetBool("IsAttacking", true);
-                int attackNumber = Random.Range(0, 3);
                 animator.SetInteger("AttackNumber", attackNumber);
+                attackChosen = false;
+
+                if (attackNumber == 2)
+                {
+                    if (Mathf.Abs(transform.rotation.eulerAngles.y - rotation.eulerAngles.y) > 0.1f)
+                    {
+                        target = GameObject.FindGameObjectWithTag("Player").transform.position;
+                        GetRotationToTarget();
+                        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotateSpeed);
+                    }
+                    else
+                    {
+                        ShootFire();
+                        target = Vector3.zero;
+                    }
+                    
+                }
 
                 if (HasAnimationFinished("Attack " + (attackNumber + 1)))
                 {
@@ -168,6 +217,27 @@ public class DragonEnemy : Enemy {
 
                 break;
         }
+    }
+
+    private void ShootFire()
+    {
+        if (fire != null)
+        {
+            return;
+        }
+
+        fireDelayTimer += Time.deltaTime;
+
+        if (fireDelayTimer < fireDelay)
+        {
+            return;
+        }
+
+        fireDelayTimer = 0.0f;
+        Vector3 direction = fireTarget.position - mouthTransform.position;
+        Quaternion rotation = Quaternion.LookRotation(direction);
+        fire = Instantiate(firePrefab, mouthTransform.position, rotation, null);
+
     }
 
     private void GetRotationToTarget()
@@ -218,7 +288,7 @@ public class DragonEnemy : Enemy {
 
     private void Walk(States switchToState)
     {
-        if (Vector3.Distance(target, transform.position) > 5.0f)
+        if (Vector3.Distance(target, transform.position) > GetAttackDistance())
         {
             transform.Translate(Vector3.forward * walkSpeed * Time.deltaTime);
         }
@@ -227,5 +297,24 @@ public class DragonEnemy : Enemy {
             target = Vector3.zero;
             currentState = switchToState;
         }
+    }
+
+    private float GetAttackDistance()
+    {
+        float dist = 0f;
+        switch (attackNumber)
+        {
+            case 0:
+                dist = attack1Distance;
+                break;
+            case 1:
+                dist = attack2Distance;
+                break;
+            case 2:
+                dist = attack3Distance;
+                break;
+        }
+
+        return dist;
     }
 }

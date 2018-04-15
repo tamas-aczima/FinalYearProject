@@ -13,7 +13,8 @@ public class SpellController : MonoBehaviour {
 
     private YostSkeletonRig myPrioRig;
     private bool isLeft;
-    private bool isCasting;
+    private bool isLeftCasting;
+    private bool isRightCasting;
     private List<int> touchedColliders = new List<int>();
     private List<int> fireSpellColliders = new List<int>() { 2, 1, 0, 3 };
     private List<int> lightningSpellColliders = new List<int>() { 1, 0, 2, 3 };
@@ -22,6 +23,21 @@ public class SpellController : MonoBehaviour {
     private float fireBallVelocity = 10;
     private float lightningBoltLength = 3;
 
+    public bool IsLeft
+    {
+        get { return isLeft; }
+    }
+
+    public bool IsLeftCasting
+    {
+        get { return isLeftCasting; }
+    }
+
+    public bool IsRightCasting
+    {
+        get { return isRightCasting; }
+    }
+
 	void Start () {
         myPrioRig = gameObject.transform.root.gameObject.GetComponent<YostSkeletonRig>();
         isLeft = gameObject.name == "LeftHand";
@@ -29,29 +45,32 @@ public class SpellController : MonoBehaviour {
 	
 	void Update () {
         CheckCasting();
-
         CastSpell();
-
         ShootFireBall();
-
         UpdateLightningBolt();
     }
 
     private void CheckCasting()
     {
         //if button pressed, then start casting
-        if ((myPrioRig.GetJoyStickButtonDown(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_LEFT_JOYSTICK_BUTTON) && isLeft) ||
-            (myPrioRig.GetJoyStickButtonDown(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_RIGHT_JOYSTICK_BUTTON) && !isLeft))
+        if (myPrioRig.GetJoyStickButtonDown(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_LEFT_JOYSTICK_BUTTON) && isLeft)
         {
-            isCasting = true;
+            isLeftCasting = true;
+        } 
+        if (myPrioRig.GetJoyStickButtonDown(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_RIGHT_JOYSTICK_BUTTON) && !isLeft)
+        {
+            isRightCasting = true;
             //Debug.Log("Start casting");
         }
 
         //if button released, then stop casting
-        if ((myPrioRig.GetJoyStickButtonUp(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_LEFT_JOYSTICK_BUTTON) && isLeft && isCasting) ||
-            (myPrioRig.GetJoyStickButtonUp(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_RIGHT_JOYSTICK_BUTTON) && !isLeft && isCasting))
+        if (myPrioRig.GetJoyStickButtonUp(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_LEFT_JOYSTICK_BUTTON) && isLeft)
         {
-            isCasting = false;
+            isLeftCasting = false;
+        }
+        if (myPrioRig.GetJoyStickButtonUp(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_RIGHT_JOYSTICK_BUTTON) && !isLeft)
+        {
+            isRightCasting = false;
             //Debug.Log("Stop casting");
         }
     }
@@ -73,7 +92,7 @@ public class SpellController : MonoBehaviour {
             spell = Instantiate(lightningSpell, spellLocation.position, Quaternion.identity, spellLocation);
         }
 
-        if (touchedColliders.Count > 0 && (touchedColliders.Count >= maxColliders || !isCasting))
+        if (touchedColliders.Count >= maxColliders || (touchedColliders.Count > 0 && isLeft && !isLeftCasting) || (touchedColliders.Count > 0 && !isLeft && !isRightCasting))
         {
             Debug.Log("cleared list");
             touchedColliders.Clear();
@@ -100,8 +119,13 @@ public class SpellController : MonoBehaviour {
     {
         if (spell == null || (spell != null && !spell.name.StartsWith(lightningSpell.name))) return;
 
-        spell.GetComponent<LightningBoltScript>().StartPosition = Vector3.zero;
+        //spell.GetComponent<LightningBoltScript>().StartPosition = Vector3.zero;
         spell.GetComponent<LightningBoltScript>().EndPosition = isLeft ? -transform.right * lightningBoltLength : transform.right * lightningBoltLength;
+
+        //rotate spellLocation to align collider with lightning
+        Vector3 relativePos = spell.GetComponent<LightningBoltScript>().EndPosition - spellLocation.position;
+        Quaternion rotation = Quaternion.LookRotation(relativePos);
+        spellLocation.rotation = rotation;
 
         if ((myPrioRig.GetJoyStickButtonUp(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_LEFT_JOYSTICK_BUTTON) && isLeft) ||
             (myPrioRig.GetJoyStickButtonUp(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_RIGHT_JOYSTICK_BUTTON) && !isLeft))
@@ -111,9 +135,9 @@ public class SpellController : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (isCasting)
+        if (isLeftCasting || isRightCasting)
         {
             for (int i = 0; i < spellColliders.Length; i++)
             {

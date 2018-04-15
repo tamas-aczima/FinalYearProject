@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 23760839145597796}
   m_Layer: 0
   m_Name: Scroll
-  m_TagString: Untagged
+  m_TagString: Scroll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,14 +69,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1943401538986552}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.353, y: 1.428, z: 13.721}
+  m_LocalRotation: {x: 0, y: 0.2990408, z: 0, w: 0.9542404}
+  m_LocalPosition: {x: 20.13, y: 1.428, z: 14.44}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 224214125925557862}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 34.8, z: 0}
 --- !u!23 &23760839145597796
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -185,7 +185,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Text
+  m_Text: Some objects can be levitated, which is indicated by the outline when pointing
+    at them. Point at objects with your palm facing up and press the Joystick button
+    to levitate them.
 --- !u!222 &222513934628138356
 CanvasRenderer:
   m_ObjectHideFlags: 1

@@ -10,7 +10,8 @@ GameObject:
   - component: {fileID: 490088}
   - component: {fileID: 12010332}
   - component: {fileID: 11427938}
-  m_Layer: 0
+  - component: {fileID: 136104852072559882}
+  m_Layer: 10
   m_Name: SimpleLightningBoltPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +26,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 427242}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LightningStart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +41,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 458970}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LightningEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,3 +212,16 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 106988}
   m_IsPrefabParent: 1
+--- !u!136 &136104852072559882
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106988}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.25
+  m_Height: 1
+  m_Direction: 0
+  m_Center: {x: 0, y: 0, z: 0}
