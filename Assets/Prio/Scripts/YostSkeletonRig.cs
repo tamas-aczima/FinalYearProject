@@ -78,7 +78,7 @@ public class YostSkeletonRig : MonoBehaviour
     private byte hubButtonState; // The current state of the PrioVR Hub Buttons
 
     // Pedestrian Variables
-    private Vector3 moveDirection = Vector3.zero; // The current direction to move the model by
+    //private Vector3 moveDirection = Vector3.zero; // The current direction to move the model by
 
     public float maximumCertainty = 1;
     public float varianceMultiplyFactorPed = 4;
@@ -93,7 +93,7 @@ public class YostSkeletonRig : MonoBehaviour
     public float varianceMultiplyFactorSmooth = 4;
     public int varianceDataLengthSmooth = 10;
 
-    private List<HumanBodyBones> trackedBones = new List<HumanBodyBones>();
+    //private List<HumanBodyBones> trackedBones = new List<HumanBodyBones>();
 
     //void OnGUI()
     //{

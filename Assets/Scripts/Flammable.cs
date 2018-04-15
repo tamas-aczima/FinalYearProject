@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Flammable : MonoBehaviour
 {
@@ -10,46 +8,39 @@ public class Flammable : MonoBehaviour
     private float burnTimer = 0.0f;
     private bool isOnFire = false;
     private bool hasStartedBurning = false;
-
-   	private void Start ()
-    {
-    }
 	
-	private void Update ()
-    {
+	private void Update () {
         BurnDown();
 	}
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.GetComponent<Fireball>() != null && !hasStartedBurning)
-        {
+    private void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.GetComponent<Fireball>() != null && !hasStartedBurning) {
             isOnFire = true;
         }
     }
 
-    private void BurnDown()
-    {
+    private void BurnDown() {
         if (!isOnFire) return;
 
         Debug.Log("burning");
-        if (!hasStartedBurning)
-        {
-            foreach (GameObject fire in fires)
-            {
+        if (!hasStartedBurning) {
+            foreach (GameObject fire in fires) {
                 fire.gameObject.SetActive(true);
             }
             hasStartedBurning = true;
         }
 
         burnTimer += Time.deltaTime;
-        if (burnTimer >= burnTime)
-        {
-            foreach (GameObject fire in fires)
-            {
+        if (burnTimer >= burnTime) {
+            foreach (GameObject fire in fires) {
                 fire.gameObject.SetActive(false);
             }
-            burnableObject.SetActive(false);
+            if (burnableObject != null) {
+                burnableObject.SetActive(false);
+            }
+            else {
+                Destroy(gameObject);
+            }
             isOnFire = false;
         }
     }

@@ -8,6 +8,7 @@ public class PrioController : MonoBehaviour {
     [SerializeField] private float rotateSpeed = 0f;
     [SerializeField] private Transform thirdPersonCameraTarget;
     [SerializeField] private Transform spine;
+    [SerializeField] private Transform hips;
     [SerializeField] private float xRotationRange;
     [SerializeField] private float yRotationRange;
     [HideInInspector] public YostSkeletonRig myPrioRig = null;

@@ -21,11 +21,7 @@ public class Fireball : MonoBehaviour {
 
     private void Update()
     {
-        lifeTimer += Time.deltaTime;
-        if (lifeTimer >= maxLifeTime)
-        {
-            Destroy(gameObject);
-        }
+        LifeTime();
     }
 
     private void FixedUpdate () {
@@ -44,5 +40,17 @@ public class Fireball : MonoBehaviour {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
         }
         Destroy(gameObject);
+    }
+
+    private void LifeTime()
+    {
+        if (transform.parent == null)
+        {
+            lifeTimer += Time.deltaTime;
+            if (lifeTimer >= maxLifeTime)
+            {
+                Destroy(gameObject);
+            }
+        } 
     }
 }

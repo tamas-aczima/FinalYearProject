@@ -20,7 +20,7 @@ public class SpellController : MonoBehaviour {
     private List<int> lightningSpellColliders = new List<int>() { 1, 0, 2, 3 };
     private int maxColliders = 4;
     private GameObject spell = null;
-    private float fireBallVelocity = 10;
+    private float fireBallVelocity = 5;
     private float lightningBoltLength = 3;
 
     public bool IsLeft
@@ -60,7 +60,6 @@ public class SpellController : MonoBehaviour {
         if (myPrioRig.GetJoyStickButtonDown(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_RIGHT_JOYSTICK_BUTTON) && !isLeft)
         {
             isRightCasting = true;
-            //Debug.Log("Start casting");
         }
 
         //if button released, then stop casting
@@ -71,7 +70,6 @@ public class SpellController : MonoBehaviour {
         if (myPrioRig.GetJoyStickButtonUp(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_RIGHT_JOYSTICK_BUTTON) && !isLeft)
         {
             isRightCasting = false;
-            //Debug.Log("Stop casting");
         }
     }
 
