@@ -222,8 +222,10 @@
     <Compile Include="Assets\Scripts\Enemies\StationaryWizardEnemy.cs" />
     <Compile Include="Assets\Scripts\Flammable.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
-    <Compile Include="Assets\Scripts\Interactable.cs" />
-    <Compile Include="Assets\Scripts\InteractWithObjects.cs" />
+    <Compile Include="Assets\Scripts\Interactables\Chest.cs" />
+    <Compile Include="Assets\Scripts\Interactables\Interactable.cs" />
+    <Compile Include="Assets\Scripts\Interactables\InteractWithObjects.cs" />
+    <Compile Include="Assets\Scripts\Interactables\Lever.cs" />
     <Compile Include="Assets\Scripts\Level3Controller.cs" />
     <Compile Include="Assets\Scripts\LevelController.cs" />
     <Compile Include="Assets\Scripts\MovingPlatform.cs" />

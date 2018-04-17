@@ -69,14 +69,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1943401538986552}
-  m_LocalRotation: {x: 0, y: 0.2990408, z: 0, w: 0.9542404}
-  m_LocalPosition: {x: 20.13, y: 1.428, z: 14.44}
+  m_LocalRotation: {x: -0, y: 0.36137077, z: -0, w: 0.9324222}
+  m_LocalPosition: {x: 52.376, y: 7.063, z: 51.863}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 224214125925557862}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 34.8, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 42.369003, z: 0}
 --- !u!23 &23760839145597796
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -173,21 +173,19 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 47445a0b27918a949866e04d2ba1f138, type: 3}
-    m_FontSize: 120
+    m_Font: {fileID: 12800000, guid: 571610ac3cdb6d645ba646b9d6600335, type: 3}
+    m_FontSize: 200
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 120
+    m_MaxSize: 200
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Some objects can be levitated, which is indicated by the outline when pointing
-    at them. Point at objects with your palm facing up and press the Joystick button
-    to levitate them.
+  m_Text: Chests can be opened by pressing the top button and lifting the lid.
 --- !u!222 &222513934628138356
 CanvasRenderer:
   m_ObjectHideFlags: 1

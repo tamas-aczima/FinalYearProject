@@ -14,7 +14,6 @@ public class DisplayText : MonoBehaviour {
 
     private void Start() {
         isVR = VRDevice.isPresent;
-        scrolls = GameObject.FindGameObjectsWithTag("Scroll").ToList();
     }
 
     private void Update() {
@@ -23,6 +22,8 @@ public class DisplayText : MonoBehaviour {
 
     private void Display() {
         if (isVR) return;
+
+        scrolls = GameObject.FindGameObjectsWithTag("Scroll").ToList();
 
         if (scrolls.Count > 0) {
             var closestScroll = scrolls.Find(scroll => Vector3.Distance(transform.position, scroll.transform.position) <= displayRadius);

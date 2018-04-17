@@ -9,13 +9,19 @@ public class Levitation : MonoBehaviour {
     private bool isLeft = false;
     private float maxDistance = 50;
     private int maxHits = 3;
-    private GameObject levitatingObject = null;
     private bool isLevitating = false;
-    Rigidbody rb = null;
-    Vector3 handPositionAtPickUp;
-    GameObject levitationObject;
-    Transform levitationObjectParent;
-    GameObject[] hits;
+    private Rigidbody rb = null;
+    private Vector3 handPositionAtPickUp;
+    private GameObject levitationObject;
+    private Transform levitationObjectParent;
+    private GameObject[] hits;
+    private bool isEnabled;
+
+    public bool IsEnabled
+    {
+        get { return isEnabled; }
+        set { isEnabled = value; }
+    }
 
     void Start () {
         myPrioRig = gameObject.transform.root.gameObject.GetComponent<YostSkeletonRig>();
@@ -24,6 +30,8 @@ public class Levitation : MonoBehaviour {
     }
 	
 	void Update () {
+        if (!isEnabled) return;
+
         RayCast();
         CheckNoLevitationObject();
         LevitateObject();
@@ -87,6 +95,7 @@ public class Levitation : MonoBehaviour {
                 rb.useGravity = true;
                 rb = null;
                 levitationObject.transform.parent = levitationObjectParent;
+                levitationObject = null;
             }
         } 
     }

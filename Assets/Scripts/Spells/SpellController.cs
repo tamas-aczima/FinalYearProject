@@ -73,24 +73,25 @@ public class SpellController : MonoBehaviour {
         }
     }
 
-    private void CastSpell()
-    {
+    private void CastSpell() {
+
+        //if the player has already cast a spell return
         if (spell != null) return;
 
-        if (touchedColliders.Count == 4)
-        Debug.Log(touchedColliders[0] + " " + touchedColliders[1] + " " + touchedColliders[2] + " " + touchedColliders[3]);
-
+        //cast fire spell
         if (touchedColliders.SequenceEqual(fireSpellColliders))
         {
             spell = Instantiate(fireSpell, spellLocation.position, Quaternion.identity, spellLocation);
         }
 
+        //cast lightning spell
         if (touchedColliders.SequenceEqual(lightningSpellColliders))
         {
             spell = Instantiate(lightningSpell, spellLocation.position, Quaternion.identity, spellLocation);
         }
 
-        if (touchedColliders.Count >= maxColliders || (touchedColliders.Count > 0 && isLeft && !isLeftCasting) || (touchedColliders.Count > 0 && !isLeft && !isRightCasting))
+        //clear collider list if the current list doesn't match any spell sequences
+        if (touchedColliders.Count >= maxColliders || (touchedColliders.Count > 0 && ((isLeft && !isLeftCasting) || (!isLeft && !isRightCasting))))
         {
             Debug.Log("cleared list");
             touchedColliders.Clear();

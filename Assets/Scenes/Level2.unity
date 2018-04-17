@@ -6033,6 +6033,15 @@ Prefab:
       propertyPath: doorToOpen
       value: 
       objectReference: {fileID: 1155606662}
+    - target: {fileID: 114070831158579686, guid: 8e1e5aabec802304db195a5c7daac26d,
+        type: 2}
+      propertyPath: doorToOpen
+      value: 
+      objectReference: {fileID: 1155606662}
+    - target: {fileID: 1346578238807074, guid: 8e1e5aabec802304db195a5c7daac26d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e1e5aabec802304db195a5c7daac26d, type: 2}
   m_IsPrefabParent: 0

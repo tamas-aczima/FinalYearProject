@@ -30,32 +30,30 @@ public class CameraController : MonoBehaviour {
     private void ChangeCamera() {
         if (isVR) return;
 
-        if (!cameraChanged && gameObject.GetComponent<YostSkeletonRig>().GetJoyStickButtonDown(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_LEFT_X_BUTTON)) {
+        if (!cameraChanged && gameObject.GetComponent<YostSkeletonRig>().
+            GetJoyStickButtonDown(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.
+            YOST_SKELETON_LEFT_X_BUTTON)) {
             cameraChanged = true;
-
-            if (activeCamera == firstPersonCamera) {
-                activeCamera = thirdPersonCamera;
-            }
-            else {
-                activeCamera = firstPersonCamera;
-            }
-
             ToggleCamera();
         }
 
-        if (gameObject.GetComponent<YostSkeletonRig>().GetJoyStickButtonUp(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_LEFT_X_BUTTON)) {
+        if (gameObject.GetComponent<YostSkeletonRig>().
+            GetJoyStickButtonUp(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.
+            YOST_SKELETON_LEFT_X_BUTTON)) {
             cameraChanged = false;
         }
     }
 
     private void ToggleCamera() {
         if (activeCamera == firstPersonCamera) {
-            firstPersonCamera.SetActive(true);
-            thirdPersonCamera.SetActive(false);
-        }
-        else {
+            activeCamera = thirdPersonCamera;
             thirdPersonCamera.SetActive(true);
             firstPersonCamera.SetActive(false);
+        }
+        else {
+            activeCamera = firstPersonCamera;
+            firstPersonCamera.SetActive(true);
+            thirdPersonCamera.SetActive(false);
         }
     }
 }

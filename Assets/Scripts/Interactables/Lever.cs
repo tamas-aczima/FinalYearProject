@@ -1,24 +1,11 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Interactable : MonoBehaviour {
+public class Lever : Interactable {
 
-    [SerializeField] private bool pickupAble;
-    [SerializeField] private bool isLever;
     [SerializeField] private GameObject doorToOpen;
     private bool isTurned = false;
     private bool hasOpened = false;
-
-    public bool PickupAble
-    {
-        get { return pickupAble; }
-    }
-
-    public bool IsLever
-    {
-        get { return isLever; }
-    }
 
     public bool IsTurned
     {
@@ -28,7 +15,7 @@ public class Interactable : MonoBehaviour {
 
     private void Update()
     {
-        if (isLever && isTurned && doorToOpen != null && !hasOpened)
+        if (isTurned && doorToOpen != null && !hasOpened)
         {
             hasOpened = true;
             doorToOpen.GetComponent<AudioSource>().PlayOneShot(doorToOpen.GetComponent<AudioSource>().clip);
