@@ -2035,6 +2035,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  moveSpeed: 0
+  rotateSpeed: 0
   projectileLocation: {fileID: 4248940974503284}
   spellPrefab: {fileID: 1317143686984264, guid: 28ba1af29efeca248a5999b88cefb6a2,
     type: 2}
@@ -2042,7 +2044,7 @@ MonoBehaviour:
   maxAttackTime: 4
   minAttacksToTeleport: 2
   maxAttacksToTeleport: 4
-  projectileSpeed: 10
+  projectileSpeed: 15
   shotDelay: 1.5
   disappearTime: 5
 --- !u!136 &136126926635632878

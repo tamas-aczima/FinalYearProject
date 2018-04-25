@@ -13,6 +13,10 @@ public class LevelController : MonoBehaviour {
         GameObject.FindGameObjectWithTag("Player").transform.position = GameObject.FindGameObjectWithTag("SpawnPoint").transform.position;
         blackImage = GameObject.FindGameObjectWithTag("Player").transform.Find("FadeCanvas").transform.Find("Black").GetComponent<Image>();
         StartCoroutine(Fade(true));
+        if (SceneManager.GetActiveScene().buildIndex > 1)
+        {
+            PlayerPrefs.SetInt("StartedLevel", SceneManager.GetActiveScene().buildIndex - 1);
+        }
     }
 	
 	void Update () {

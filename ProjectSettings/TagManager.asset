@@ -12,6 +12,7 @@ TagManager:
   - EnemySpawnPoint
   - Interact
   - Scroll
+  - Fireball
   layers:
   - Default
   - TransparentFX
@@ -30,7 +31,7 @@ TagManager:
   - Spell
   - BloomMobileEffect
   - Ground
-  - 
+  - Unwalkable
   - 
   - 
   - 

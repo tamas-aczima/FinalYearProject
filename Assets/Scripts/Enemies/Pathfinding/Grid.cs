@@ -16,7 +16,7 @@ public class Grid : MonoBehaviour
     private int gridSizeY;
 
     private void Start() {
-        gridSize = new Vector2(10, 10);
+        gridSize = new Vector2(30, 30);
         nodeDiameter = nodeRadius * 2;
         gridSizeX = Mathf.RoundToInt(gridSize.x / nodeDiameter);
         gridSizeY = Mathf.RoundToInt(gridSize.y / nodeDiameter);
@@ -111,26 +111,26 @@ public class Grid : MonoBehaviour
                 }
             }
         }
-        //else
-        //{
-        //if (grid != null)
-        //{
-        //    foreach (Node n in grid)
-        //    {
-        //        Gizmos.color = n.isWalkable ? Color.white : Color.red;
+        else
+        {
+            if (grid != null)
+            {
+                foreach (Node n in grid)
+                {
+                    Gizmos.color = n.isWalkable ? Color.white : Color.red;
 
-        //        if (path != null)
-        //        {
-        //            if (path.Contains(n))
-        //            {
-        //                Gizmos.color = Color.black;
-        //            }
-        //        }
+                    if (path != null)
+                    {
+                        if (path.Contains(n))
+                        {
+                            Gizmos.color = Color.black;
+                        }
+                    }
 
-        //        Gizmos.DrawCube(n.position, Vector3.one * (nodeDiameter - 0.1f));
-        //    }
-        //}
-        //}
+                    Gizmos.DrawCube(n.position, Vector3.one * (nodeDiameter - 0.1f));
+                }
+            }
+        }
     }
 }
 

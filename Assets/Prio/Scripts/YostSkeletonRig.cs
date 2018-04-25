@@ -291,7 +291,7 @@ public class YostSkeletonRig : MonoBehaviour
     }
 
     // Update the Yost Connection processor suit layout
-    void UpdateSuitLayout()
+    private void UpdateSuitLayout()
     {
         StopStreaming();
 
@@ -318,7 +318,7 @@ public class YostSkeletonRig : MonoBehaviour
     }
 
     // Start streaming of the current Yost Connection processor
-    void StartStreaming()
+    private void StartStreaming()
     {
         yost.stopControllerUpdating(animateProcId);
         yost.setupStandardStreamPrioProcessor(animateProcId);
@@ -341,7 +341,7 @@ public class YostSkeletonRig : MonoBehaviour
     }
 
     // Stop streaming of the current Yost Connection processor
-    public void StopStreaming()
+    private void StopStreaming()
     {
         error = yost.startControllerUpdating(animateProcId);
 
@@ -364,7 +364,7 @@ public class YostSkeletonRig : MonoBehaviour
     }
 
     // Reset the model to it's original pose
-    void ResetPose()
+    private void ResetPose()
     {
         foreach (SkeletonEntry entry in bones)
         {
@@ -376,7 +376,7 @@ public class YostSkeletonRig : MonoBehaviour
     }
 
     // Setup a PrioVR/TSS processor, Smoothing processor, and a Pedestrian Tracking processor
-    void SetupProcessors()
+    private void SetupProcessors()
     {
         if (isPrio > 0)
         {
@@ -417,7 +417,7 @@ public class YostSkeletonRig : MonoBehaviour
     }
 
     // Pairs the Unity HumanBone to the YOST_SKELETON_BONEs.
-    void SetupBones()
+    private void SetupBones()
     {
         // Remove the default tracked bones, so we can add our aliased bones
         yost.stopTrackingBonePedestrianTrackingProcessor(pedTrackingProcId, System.Text.Encoding.UTF8.GetBytes("RightFoot"));
@@ -625,7 +625,7 @@ public class YostSkeletonRig : MonoBehaviour
     }
 
     // Update the last frame of PrioVR joystick for button down events
-    void UpdateLastFrameJoystickData()
+    private void UpdateLastFrameJoystickData()
     {
         leftJoyStickLastFrame.x_axis = leftJoyStick.x_axis;
         leftJoyStickLastFrame.y_axis = leftJoyStick.y_axis;
@@ -649,7 +649,7 @@ public class YostSkeletonRig : MonoBehaviour
     }
 
     // Get the PrioVR Hand Controller data
-    void GetJoyStickData()
+    private void GetJoyStickData()
     {
         byte[] leftJoy = new byte[4];
         leftJoy[0] = 128;
@@ -708,7 +708,7 @@ public class YostSkeletonRig : MonoBehaviour
     }
 
     // Parse the button state of the PrioVR Hand Controllers
-    void ParseJoyStickButtonState(short leftButtonState, short rightButtonState)
+    private void ParseJoyStickButtonState(short leftButtonState, short rightButtonState)
     {
         if( (leftButtonState & 1) != 0 )
         {

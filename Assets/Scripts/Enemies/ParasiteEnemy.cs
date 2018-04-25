@@ -1,22 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class ParasiteEnemy : Enemy {
 
-    private NavMeshAgent navMeshAgent;
     private Transform target;
     [SerializeField] private float targetDistance;
     [SerializeField] private float chaseDistance;
     private float distance;
     [SerializeField] private float disappearTime;
     private float disappearTimer = 0.0f;
+    [SerializeField] private GameObject fire;
 
     private enum States
     {
         Run,
         Attack,
+        Burn,
         Dead
     }
 
@@ -27,7 +27,6 @@ public class ParasiteEnemy : Enemy {
     {
         base.Start();
 
-        navMeshAgent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
 	}
 	
@@ -52,11 +51,11 @@ public class ParasiteEnemy : Enemy {
         {
             case States.Run:
                 animator.SetBool("IsInRange", false);
-                navMeshAgent.SetDestination(target.position);
+                PathRequestManager.RequestPath(new PathRequest(transform.position, target.position, OnPathFound));
+                RotateTowardsTarget(target.transform.position);
 
                 if (distance <= targetDistance)
                 {
-                    navMeshAgent.SetDestination(transform.position);
                     currentState = States.Attack;
                 }
                 break;
@@ -65,7 +64,16 @@ public class ParasiteEnemy : Enemy {
 
                 if (distance > chaseDistance)
                 {
-                    navMeshAgent.SetDestination(target.position);
+                    currentState = States.Run;
+                }
+                break;
+            case States.Burn:
+                animator.SetBool("IsBurning", true);
+                fire.SetActive(true);
+                if (HasAnimationFinished("Burn"))
+                {
+                    animator.SetBool("IsBurning", false);
+                    fire.SetActive(false);
                     currentState = States.Run;
                 }
                 break;
@@ -79,6 +87,14 @@ public class ParasiteEnemy : Enemy {
                     }
                 }
                 break;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Fireball")
+        {
+            currentState = States.Burn;
         }
     }
 

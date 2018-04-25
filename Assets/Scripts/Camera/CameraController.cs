@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.VR;
+using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour {
 
@@ -24,7 +25,10 @@ public class CameraController : MonoBehaviour {
 	}
 	
 	void Update () {
-        ChangeCamera();
+        if (SceneManager.GetActiveScene().buildIndex > 1)
+        {
+            ChangeCamera();
+        }
     }
 
     private void ChangeCamera() {

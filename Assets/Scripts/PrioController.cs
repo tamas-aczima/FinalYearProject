@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using YostSkeletalAPI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(YostSkeletonRig))]
 public class PrioController : MonoBehaviour {
@@ -46,16 +47,15 @@ public class PrioController : MonoBehaviour {
             //Starts calibration after a wait time of 2.0 seconds
             isCalibrated = true;
             StartCoroutine(myPrioRig.CalibrateSens(2.0f));
+            if (SceneManager.GetActiveScene().buildIndex == 0) {
+                SceneManager.LoadScene(1);
+            }
         }
 
         // Recenter's the player and allow for recalibrate
         if (Input.GetKeyDown(KeyCode.Space)) {
             transform.position = Vector3.zero;
             isCalibrated = false;
-        }
-
-        if (Input.GetKeyDown(KeyCode.X)) {
-            myPrioRig.StopStreaming();
         }
     }
 
@@ -97,7 +97,10 @@ public class PrioController : MonoBehaviour {
         if (strafe != 0.0f || forward != 0.0f || !characterController.isGrounded) {
             moveDirectionRelativeToHips = Quaternion.Euler(0, spine.transform.rotation.eulerAngles.y, 0) * moveDirection;
             moveDirectionRelativeToHips = transform.TransformDirection(moveDirectionRelativeToHips);
-            characterController.Move(moveDirectionRelativeToHips * movementSpeed * Time.deltaTime);
+            if (characterController.enabled)
+            {
+                characterController.Move(moveDirectionRelativeToHips * movementSpeed * Time.deltaTime);
+            }
         }
     }
 
@@ -122,9 +125,9 @@ public class PrioController : MonoBehaviour {
         thirdPersonCameraTarget.rotation = Quaternion.Euler(new Vector3(angleX, angleY, 0));
     }
 
-    private void OnApplicationQuit() { 
-        myPrioRig.StopStreaming();
-    }
+    //private void OnApplicationQuit() { 
+    //    myPrioRig.StopStreaming();
+    //}
 
     public Transform ThirdPersonCameraTarget
     {

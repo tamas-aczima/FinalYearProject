@@ -10,6 +10,8 @@ public class SpellController : MonoBehaviour {
     [SerializeField] private Transform spellLocation;
     [SerializeField] private GameObject fireSpell;
     [SerializeField] private GameObject lightningSpell;
+    [SerializeField] private GameObject laserPrefab;
+    private GameObject laser;
 
     private YostSkeletonRig myPrioRig;
     private bool isLeft;
@@ -50,49 +52,45 @@ public class SpellController : MonoBehaviour {
         UpdateLightningBolt();
     }
 
-    private void CheckCasting()
-    {
+    private void CheckCasting() {
         //if button pressed, then start casting
-        if (myPrioRig.GetJoyStickButtonDown(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_LEFT_JOYSTICK_BUTTON) && isLeft)
-        {
+        if (myPrioRig.GetJoyStickButtonDown(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_LEFT_JOYSTICK_BUTTON) && isLeft) {
             isLeftCasting = true;
         } 
-        if (myPrioRig.GetJoyStickButtonDown(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_RIGHT_JOYSTICK_BUTTON) && !isLeft)
-        {
+        if (myPrioRig.GetJoyStickButtonDown(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_RIGHT_JOYSTICK_BUTTON) && !isLeft) {
             isRightCasting = true;
         }
 
         //if button released, then stop casting
-        if (myPrioRig.GetJoyStickButtonUp(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_LEFT_JOYSTICK_BUTTON) && isLeft)
-        {
+        if (myPrioRig.GetJoyStickButtonUp(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_LEFT_JOYSTICK_BUTTON) && isLeft) {
             isLeftCasting = false;
         }
-        if (myPrioRig.GetJoyStickButtonUp(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_RIGHT_JOYSTICK_BUTTON) && !isLeft)
-        {
+        if (myPrioRig.GetJoyStickButtonUp(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_RIGHT_JOYSTICK_BUTTON) && !isLeft) {
             isRightCasting = false;
         }
     }
 
     private void CastSpell() {
-
         //if the player has already cast a spell return
         if (spell != null) return;
 
         //cast fire spell
-        if (touchedColliders.SequenceEqual(fireSpellColliders))
-        {
+        if (touchedColliders.SequenceEqual(fireSpellColliders)) {
             spell = Instantiate(fireSpell, spellLocation.position, Quaternion.identity, spellLocation);
+            if (laser == null)
+            {
+                laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
+                laser.transform.localScale = new Vector3(laser.transform.localScale.x, laser.transform.localScale.y, 10);
+            }
         }
 
         //cast lightning spell
-        if (touchedColliders.SequenceEqual(lightningSpellColliders))
-        {
+        if (touchedColliders.SequenceEqual(lightningSpellColliders)) {
             spell = Instantiate(lightningSpell, spellLocation.position, Quaternion.identity, spellLocation);
         }
 
         //clear collider list if the current list doesn't match any spell sequences
-        if (touchedColliders.Count >= maxColliders || (touchedColliders.Count > 0 && ((isLeft && !isLeftCasting) || (!isLeft && !isRightCasting))))
-        {
+        if (touchedColliders.Count >= maxColliders || (touchedColliders.Count > 0 && ((isLeft && !isLeftCasting) || (!isLeft && !isRightCasting)))) {
             Debug.Log("cleared list");
             touchedColliders.Clear();
         }
@@ -105,6 +103,11 @@ public class SpellController : MonoBehaviour {
         if ((myPrioRig.GetJoyStickButtonUp(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_LEFT_JOYSTICK_BUTTON) && isLeft) ||
             (myPrioRig.GetJoyStickButtonUp(YostSkeletalAPI.YOST_SKELETON_JOYSTICK_BUTTON.YOST_SKELETON_RIGHT_JOYSTICK_BUTTON) && !isLeft))
         {
+            if (laser != null)
+            {
+                Destroy(laser);
+            }
+
             Vector3 velocity = isLeft ? -transform.right : transform.right;
             velocity *= fireBallVelocity;
             spell.GetComponent<Rigidbody>().velocity = velocity;

@@ -228,7 +228,9 @@
     <Compile Include="Assets\Scripts\Interactables\Lever.cs" />
     <Compile Include="Assets\Scripts\Level3Controller.cs" />
     <Compile Include="Assets\Scripts\LevelController.cs" />
+    <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\Scripts\MovingPlatform.cs" />
+    <Compile Include="Assets\Scripts\ParasiteLevelController.cs" />
     <Compile Include="Assets\Scripts\Pedestal.cs" />
     <Compile Include="Assets\Scripts\Pillar.cs" />
     <Compile Include="Assets\Scripts\PillarPuzzleController.cs" />

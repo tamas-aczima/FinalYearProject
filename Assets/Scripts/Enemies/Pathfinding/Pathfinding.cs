@@ -18,7 +18,7 @@ public class Pathfinding : MonoBehaviour
         Node startNode = grid.GetNodeFromWorldPoint(request.pathStart);
         Node targetNode = grid.GetNodeFromWorldPoint(request.pathEnd);
 
-        if (startNode.isWalkable && targetNode.isWalkable) {
+        //if (targetNode.isWalkable) {
             Heap<Node> openSet = new Heap<Node>(grid.MaxSize);
             HashSet<Node> closedSet = new HashSet<Node>();
 
@@ -64,7 +64,7 @@ public class Pathfinding : MonoBehaviour
                     }
                 }
             }
-        }
+        //}
         if (pathSuccess) {
             wayPoints = RetracePath(startNode, targetNode);
         }
